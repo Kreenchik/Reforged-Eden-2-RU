@@ -1,0 +1,39 @@
+# Example file for controlling loading image and overlay text display
+# To activate remove "_example" from filename
+# ---------------------------------------------------------------------------------------
+# Note: Specify filenames without extension (.jpg will be added internally)
+# ---------------------------------------------------------------------------------------
+
+# Overlay title
+Title: <b><#00ffff>Reforged Eden 2 Beta</color></b> <size=65%><#ffffff>(Сборка 46)</color></size>
+
+# Overlay body (typically multi-line text)
+# If commented out, only the title will be displayed
+Body: |
+  <size=135%><#ffffff><b>6 мая:</b></color></size>
+  <size=85%>•<indent=3%>Добавлены динамические ЖК-экраны. Они автоматически обновляют ЖК-экраны и проекторы, показывая характеристики корабля и количество предметов. Подробности в списке изменений.</indent></size>
+  <size=85%>•<indent=3%>Исправлены эксплойты с разборкой.</indent></size>
+  <size=85%>•<indent=3%>Добавлено новое грузовое судно Зиракс.</indent></size>
+  <size=85%>•<indent=3%>Износ большинства ручного оружия снижен на 50%.</indent></size>
+  <size=85%>•<indent=3%>Прочие обновления и исправления. Все подробности в Мастерской.</indent></size>
+
+  <size=85%><#ffff00>Для одиночных сохранений рекомендуется обновить КПК. Подробности в списке изменений в Мастерской или по кнопке журнала изменений сценария в окне инвентаря игрока.</color></size>
+
+# To show a certain image at the start of each loading image sequence, specify the respective file name
+# To use the default random image selection, comment out the following line
+# FirstPic: p49
+
+# To show the overlay text with certain images only, specify the respective file names
+# To show the text with every image, comment out the following line
+# ShowWith: [ p02, p03 ]
+
+# Show time for images - if not specified differently below
+# If commented out, the default is 10 seconds
+# Note: This time depends on the speed of the client computer as when loading a game a lot of work is done in parallel
+StandardShowTime: 20
+
+# To set a specific show time for certain images, specify "filename: time" lines
+# If not needed, comment out all lines of the following parameter
+# ShowTimes:
+  # p49: 45
+  # p06: 8

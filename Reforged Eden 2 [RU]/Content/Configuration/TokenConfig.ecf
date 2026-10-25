@@ -1,0 +1,3707 @@
+
+# Tokens are instances of the item 'GenericToken' that will get their purpose in game.
+# F.e. you can define a lock code for a door to be opened by a token that has the id of this lock code. Or you can
+# define a quest or a PDA mission that needs a token to get finished.
+# You don't need to define every token here, but if defined, the name and description will show up correctly.
+# Set RemoveOnUse: true to remove it from the inventory of the player as soon as it was used.
+# === Possible Usage ====
+# 1. Place a Token with a certain key (= Meta ) to a inventory (f.ex. Container in an Alien POI): Open Console > 'give item Token 0001' > This will add a token to your inventory > place it in a container > Save POI (Only works with admin core POI at the moment)
+# 2. Give a Token with a certain Meta to a player via PDA via Reward or InventoryOps: Use 'Token:0001' to give the Red Keycard for example
+# 3. Give a Token in a dialogue: Use a function, f.ex AddItem('KeyCardBlack', 3, 1234)  = Will give the player 3x Keycard Black with the Meta 1234
+# 4. Let a Trader sell/buy tokens: Enter an item to Trader config. Example: 'Item3: "Token:0001, 1, 1-2, 1-1, 1-2" = will buy and sell the Red Keycard from below
+# 5. Use a Token in a loot table. Same as with a Trader. Use 'Token:0001' in your loot table/config 
+# ========== IMPORTANT ===========
+# - Currently only the item 'Token' (Itemsconfig.ecf id: 1305) can have a 4-digit META element. Any OTHER "keycard" named item or other items in general can NOT have meta info attached!
+# - When working with the TokenConfig.ecf, adding custom names for the Token:Meta combination, you can use the console command 'token reload' when you are ingame. You do not need to restart the game when working with this file!
+# =================================
+#
+# DropOnDeath:   > If set to 'False'  this item or block is not dropped on player death. Use for important story items that players shall not lose on death. Default is set to 'True'.
+# =================================
+# Example Token
+{ Token Id: 1, Name: KeyCardRed
+  Description: RE2RU_t2
+# CustomIcon: AddAnIconNameHere
+}
+
+{ Token Id: 2, Name: KeyCardGreen
+  Description: RE2RU_t4
+}
+
+{ Token Id: 1234, Name: RE2RU_t5
+  Description: RE2RU_t6
+  #RemoveOnUse: true
+}
+
+# ====================================================
+# ======= Original Reforged Mission Tokens ===========
+# ====================================================
+# UCH Keycard (Offworld Grave)
+{ Token Id: 4001, Name: RE2RU_t7
+  CustomIcon: UCHKeycard
+  Description: RE2RU_t8
+}
+# Illegal Goods (Unlawful Possession)
+{ Token Id: 4006, Name: RE2RU_t9
+  CustomIcon: ContainerMission
+  Description: RE2RU_t10
+}
+# Demo Charges (Freedom Fighter)
+{ Token Id: 4007, Name: RE2RU_t11
+  CustomIcon: DemoCharge
+  RemoveOnUse: true
+  Description: RE2RU_t12
+}
+# Weapons Crate (Instigator)
+{ Token Id: 4008, Name: RE2RU_t13
+  CustomIcon: PlasticItemCrate
+  Description: RE2RU_t14
+}
+# Ancient Box (Instigator)
+{ Token Id: 4009, Name: RE2RU_t15
+  CustomIcon: WoodenItemCrate
+  Description: RE2RU_t16
+}
+# Decryption Device (Cloak-and-Dagger)
+{ Token Id: 4010, Name: RE2RU_t17
+  CustomIcon: Decryptor
+  Description: RE2RU_t18
+}
+{ Token Id: 4012, Name: RE2RU_t19
+  CustomIcon: LargeHarvestContainer
+  Description: RE2RU_t20
+}
+# IDA's core (The Cruel Stars)
+{ Token Id: 4015, Name: RE2RU_t21
+  CustomIcon: ReactorCore
+  RemoveOnUse: true
+  Description: RE2RU_t22
+}
+# ====================================================
+# ====== Undelivered Cargo (GIN Rewards) =============
+# ====================================================
+{ Token Id: 4002, Name: RE2RU_t23
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t24
+}
+{ Token Id: 4003, Name: RE2RU_t25
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t26
+}
+{ Token Id: 4004, Name: RE2RU_t27
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t28
+}
+{ Token Id: 4005, Name: RE2RU_t29
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t30
+}
+{ Token Id: 4011, Name: RE2RU_t31
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t32
+}
+{ Token Id: 4014, Name: RE2RU_t33
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t34
+}
+# ====================================================
+{ Token Id: 4013, Name: RE2RU_t35
+  CustomIcon: NavalCommendation
+  Description: RE2RU_t36
+}
+# ====================================================
+# ============== Reforged Galaxy 2 New Tokens ========
+# ====================================================
+# Roboerotic Magazine for Trader Mission
+{ Token Id: 4020, Name: RE2RU_t37
+  CustomIcon: Magazines
+  Description: RE2RU_t38
+}
+# Sexbot Type 1 (Main)
+{ Token Id: 4021, Name: RE2RU_t39
+  CustomIcon: DancingHuman3
+  Description: RE2RU_t40
+}
+# Sexbot Type 2 (Secondary)
+{ Token Id: 4022, Name: RE2RU_t41
+  CustomIcon: DancingHuman2
+  Description: RE2RU_t42
+}
+# Wire (Drug)
+{ Token Id: 4023, Name: RE2RU_t43
+  CustomIcon: EnergyPills
+  Description: RE2RU_t44
+}
+# Zyme (Drug)
+{ Token Id: 4024, Name: RE2RU_t45
+  CustomIcon: AntiToxicOintment
+  Description: RE2RU_t46
+}
+# Black Ice (Drug)
+{ Token Id: 4025, Name: RE2RU_t47
+  CustomIcon: AntiParasitePills
+  Description: RE2RU_t48
+}
+# Ripperdog Food
+{ Token Id: 4026, Name: RE2RU_t49
+  CustomIcon: TexturedPlantProtein
+  Description: RE2RU_t50
+}
+# Ghyst Keycard (Used in Ghyst Bunker)
+{ Token Id: 4027, Name: RE2RU_t51
+  CustomIcon: KeyCardBlue
+  RemoveOnUse: true
+  Description: RE2RU_t52
+}
+# Xenu Keycard (Used in NONE)
+{ Token Id: 4028, Name: RE2RU_t53
+  CustomIcon: KeyCardRed
+  RemoveOnUse: true
+  Description: RE2RU_t54
+}
+# Epsilon Keycard (Used in NONE)
+{ Token Id: 4029, Name: RE2RU_t55
+  CustomIcon: KeyCardGreen
+  RemoveOnUse: true
+  Description: RE2RU_t56
+}
+# Rados Keycard (Used in NONE)
+{ Token Id: 4030, Name: RE2RU_t57
+  CustomIcon: KeyCardBlue
+  RemoveOnUse: true
+  Description: RE2RU_t58
+}
+# Serdu Keycard (Used in NONE)
+{ Token Id: 4031, Name: RE2RU_t59
+  CustomIcon: KeyCardBlack
+  RemoveOnUse: true
+  Description: RE2RU_t60
+}
+# Abyssal Keycard (Used in NONE)
+{ Token Id: 4032, Name: RE2RU_t61
+  CustomIcon: KeyCardBlack
+  RemoveOnUse: true
+  Description: RE2RU_t62
+}
+# Polaris Keycard (Used in NONE)
+{ Token Id: 4033, Name: RE2RU_t63
+  CustomIcon: KeyCardYellow
+  RemoveOnUse: true
+  Description: RE2RU_t64
+}
+# Demo Charges (Used in Abandoned POIs)
+{ Token Id: 4034, Name: RE2RU_t65
+  CustomIcon: SwitchExplosive
+  RemoveOnUse: true
+  Description: RE2RU_t66
+}
+# Demo Charges (Zirax Explosive)
+{ Token Id: 4035, Name: RE2RU_t67
+  CustomIcon: SwitchExplosive
+  RemoveOnUse: true
+  Description: RE2RU_t68
+}
+# Demo Charges (Polaris Explosive)
+{ Token Id: 4036, Name: RE2RU_t69
+  CustomIcon: SwitchExplosive
+  RemoveOnUse: true
+  Description: RE2RU_t70
+}
+# Pirate/Random Keycard (Used in NONE)
+{ Token Id: 4037, Name: RE2RU_t71
+  CustomIcon: KeyCardYellow
+  RemoveOnUse: true
+  Description: RE2RU_t72
+}
+# ====================================================
+# ============== Weapon Software Updates =============
+# ====================================================
+# Weapon Software (Basic)
+{ Token Id: 15, Name: RE2RU_t73
+  CustomIcon: WeaponSoftwareA
+  RemoveOnUse: true
+  Description: RE2RU_t74
+}
+# Weapon Software (Improved)
+{ Token Id: 16, Name: RE2RU_t75
+  CustomIcon: WeaponSoftwareB
+  RemoveOnUse: true
+  Description: RE2RU_t76
+}
+# Weapon Software (Advanced)
+{ Token Id: 17, Name: RE2RU_t77
+  CustomIcon: WeaponSoftwareC
+  RemoveOnUse: true
+  Description: RE2RU_t78
+}
+# ====================================================
+# ============== Work Orders =========================
+# ====================================================
+
+# Hostile Apparatus
+{ Token Id: 4050, Name: RE2RU_t79
+  CustomIcon: OrderA
+  Description: RE2RU_t80
+}
+# P3
+{ Token Id: 4051, Name: RE2RU_t81
+  CustomIcon: OrderA
+  Description: RE2RU_t82
+}
+# Zero Horizons
+{ Token Id: 4052, Name: RE2RU_t83
+  CustomIcon: OrderA
+  Description: RE2RU_t84
+}
+# Non-Linear Productions
+{ Token Id: 4053, Name: RE2RU_t85
+  CustomIcon: OrderA
+  Description: RE2RU_t86
+}
+# Arriake Technology
+{ Token Id: 4054, Name: RE2RU_t87
+  CustomIcon: OrderA
+  Description: RE2RU_t88
+}
+# Chromium-Sierra
+{ Token Id: 4055, Name: RE2RU_t89
+  CustomIcon: OrderA
+  Description: RE2RU_t90
+}
+# Thermal Interactions
+{ Token Id: 4056, Name: RE2RU_t91
+  CustomIcon: OrderA
+  Description: RE2RU_t92
+}
+# Solaris-AMP
+{ Token Id: 4057, Name: RE2RU_t93
+  CustomIcon: OrderA
+  Description: RE2RU_t94
+}
+# PentMaxIt
+{ Token Id: 4058, Name: RE2RU_t95
+  CustomIcon: OrderA
+  Description: RE2RU_t96
+}
+# Cloudminer
+{ Token Id: 4059, Name: RE2RU_t97
+  CustomIcon: OrderA
+  Description: RE2RU_t98
+}
+# Interweapon Factory
+{ Token Id: 4060, Name: RE2RU_t99
+  CustomIcon: OrderA
+  Description: RE2RU_t100
+}
+# Chemmix
+{ Token Id: 4061, Name: RE2RU_t101
+  CustomIcon: OrderA
+  Description: RE2RU_t102
+}
+# Vitalife
+{ Token Id: 4062, Name: RE2RU_t103
+  CustomIcon: OrderA
+  Description: RE2RU_t104
+}
+# Gold Standard
+{ Token Id: 4063, Name: RE2RU_t105
+  CustomIcon: OrderA
+  Description: RE2RU_t106
+}
+# TOP Brewery
+{ Token Id: 4064, Name: RE2RU_t107
+  CustomIcon: OrderA
+  Description: RE2RU_t108
+}
+# Hydroflux
+{ Token Id: 4065, Name: RE2RU_t109
+  CustomIcon: OrderA
+  Description: RE2RU_t110
+}
+# ====================================================
+# ============== Weapon Upgrade Tokens ===============
+# ====================================================
+# Barrel Upgrades - Common
+{ Token Id: 20, Name: RE2RU_t111
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t112
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 21, Name: RE2RU_t113
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t114
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 22, Name: RE2RU_t115
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t116
+  MarketPrice: 5000, display: true
+}
+# Barrel Upgrades - Rare
+{ Token Id: 23, Name: RE2RU_t117
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t118
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 24, Name: RE2RU_t119
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t120
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 25, Name: RE2RU_t121
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t122
+  MarketPrice: 10000, display: true
+}
+# Barrel Upgrades - Ultra
+{ Token Id: 26, Name: RE2RU_t123
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t124
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 27, Name: RE2RU_t125
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t126
+  MarketPrice: 22500, display: true
+}
+{ Token Id: 28, Name: RE2RU_t127
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t128
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 81, Name: RE2RU_t129
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t130
+  MarketPrice: 20000, display: true
+}
+# Laser Barrel Upgrades - Rare
+{ Token Id: 29, Name: RE2RU_t131
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t132
+  MarketPrice: 10000, display: true
+}
+# Laser Barrel Upgrades - Ultra
+{ Token Id: 30, Name: RE2RU_t133
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t134
+  MarketPrice: 20000, display: true
+}
+# Plasma/Rocket Barrel Upgrades - Rare
+{ Token Id: 31, Name: RE2RU_t135
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t136
+  MarketPrice: 10000, display: true
+}
+# Plasma/Rocket Barrel Upgrades - Ultra
+{ Token Id: 32, Name: RE2RU_t137
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t138
+  MarketPrice: 20000, display: true
+}
+# Crossbow Upgrades
+{ Token Id: 33, Name: RE2RU_t139
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t140
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 34, Name: RE2RU_t141
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t142
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 35, Name: RE2RU_t143
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t144
+  MarketPrice: 10000, display: true
+}
+# Grip/Stock Upgrades - Common
+{ Token Id: 36, Name: RE2RU_t145
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t146
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 37, Name: RE2RU_t147
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t148
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 38, Name: RE2RU_t149
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t150
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 39, Name: RE2RU_t151
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t152
+  MarketPrice: 7500, display: true
+}
+# Grip/Stock Upgrades - Rare
+{ Token Id: 40, Name: RE2RU_t153
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t154
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 41, Name: RE2RU_t155
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t156
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 42, Name: RE2RU_t157
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t158
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 43, Name: RE2RU_t159
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t160
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 44, Name: RE2RU_t161
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t162
+  MarketPrice: 10000, display: true
+}
+# Grip/Stock Upgrades - Ultra
+{ Token Id: 45, Name: RE2RU_t163
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t164
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 46, Name: RE2RU_t165
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t166
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 47, Name: RE2RU_t167
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t168
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 48, Name: RE2RU_t169
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t170
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 49, Name: RE2RU_t171
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t172
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 50, Name: RE2RU_t173
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t174
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 70, Name: RE2RU_t175
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t176
+  MarketPrice: 20000, display: true
+}
+# Frame/Receiver Upgrades - Common
+{ Token Id: 51, Name: RE2RU_t177
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t178
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 52, Name: RE2RU_t179
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t180
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 53, Name: RE2RU_t181
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t182
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 54, Name: RE2RU_t183
+  CustomIcon: WeaponKitA
+  Description: RE2RU_t184
+  MarketPrice: 5000, display: true
+}
+# Frame/Receiver Upgrades - Rare
+{ Token Id: 55, Name: RE2RU_t185
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t186
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 56, Name: RE2RU_t187
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t188
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 57, Name: RE2RU_t189
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t190
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 58, Name: RE2RU_t191
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t192
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 59, Name: RE2RU_t193
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t194
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 60, Name: RE2RU_t195
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t196
+  MarketPrice: 10000, display: true
+}
+# Frame/Receiver Upgrades - Ultra
+{ Token Id: 61, Name: RE2RU_t197
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t198
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 62, Name: RE2RU_t199
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t200
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 63, Name: RE2RU_t201
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t202
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 64, Name: RE2RU_t203
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t204
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 65, Name: RE2RU_t205
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t206
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 66, Name: RE2RU_t207
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t208
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 82, Name: RE2RU_t209
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t210
+  MarketPrice: 20000, display: true
+}
+# ======= Ammo Upgrades
+# Ultra Rare
+{ Token Id: 67, Name: RE2RU_t211
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t212
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 68, Name: RE2RU_t213
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t214
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 69, Name: RE2RU_t215
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t216
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 71, Name: RE2RU_t217
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t218
+  MarketPrice: 30000, display: true
+}
+# ======= Flamethrower/Tool Upgrades
+{ Token Id: 72, Name: RE2RU_t219
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t220
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 73, Name: RE2RU_t221
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t222
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 74, Name: RE2RU_t223
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t224
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 75, Name: RE2RU_t225
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t226
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 76, Name: RE2RU_t227
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t228
+  MarketPrice: 200000, display: true
+}
+{ Token Id: 77, Name: RE2RU_t229
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t230
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 78, Name: RE2RU_t231
+  CustomIcon: WeaponKitB
+  Description: RE2RU_t232
+  MarketPrice: 10000, display: true
+}
+{ Token Id: 79, Name: RE2RU_t233
+  CustomIcon: WeaponKitC
+  Description: RE2RU_t234
+  MarketPrice: 20000, display: true
+}
+{ Token Id: 80, Name: RE2RU_t235
+  CustomIcon: LegacyMod
+  Description: RE2RU_t236
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 83, Name: RE2RU_t237
+  CustomIcon: LegacyMod
+  Description: RE2RU_t238
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 84, Name: RE2RU_t239
+  CustomIcon: LegacyMod
+  Description: RE2RU_t240
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 85, Name: RE2RU_t241
+  CustomIcon: LegacyMod
+  Description: RE2RU_t242
+  MarketPrice: 30000, display: true
+}
+# ======= Unique Pirate Mods
+{ Token Id: 86, Name: RE2RU_t243
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t244
+  MarketPrice: 40000, display: true
+}
+{ Token Id: 87, Name: RE2RU_t245
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t246
+  MarketPrice: 50000, display: true
+}
+{ Token Id: 88, Name: RE2RU_t247
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t248
+  MarketPrice: 35000, display: true
+}
+{ Token Id: 89, Name: RE2RU_t249
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t250
+  MarketPrice: 40000, display: true
+}
+{ Token Id: 90, Name: RE2RU_t251
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t252
+  MarketPrice: 70000, display: true
+}
+{ Token Id: 91, Name: RE2RU_t253
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t254
+  MarketPrice: 75000, display: true
+}
+{ Token Id: 92, Name: RE2RU_t255
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t256
+  MarketPrice: 30000, display: true
+}
+{ Token Id: 93, Name: RE2RU_t257
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t258
+  MarketPrice: 55000, display: true
+}
+{ Token Id: 94, Name: RE2RU_t259
+  CustomIcon: WeaponKitD
+  Description: RE2RU_t260
+  MarketPrice: 70000, display: true
+}
+# ==========================================================
+# ============= Trading Cards (weird, right?) ==============
+# ==========================================================
+# ===== Location Cards
+{ Token Id: 120, Name: RE2RU_t261
+  CustomIcon: TradingCard01
+  Description: RE2RU_t262
+  MarketPrice: 100, display: true
+}
+{ Token Id: 121, Name: RE2RU_t263
+  CustomIcon: TradingCard01
+  Description: RE2RU_t264
+  MarketPrice: 100, display: true
+}
+{ Token Id: 122, Name: RE2RU_t265
+  CustomIcon: TradingCard01
+  Description: RE2RU_t266
+  MarketPrice: 100, display: true
+}
+{ Token Id: 123, Name: RE2RU_t267
+  CustomIcon: TradingCard01
+  Description: RE2RU_t268
+  MarketPrice: 100, display: true
+}
+{ Token Id: 124, Name: RE2RU_t269
+  CustomIcon: TradingCard01
+  Description: RE2RU_t270
+  MarketPrice: 100, display: true
+}
+{ Token Id: 125, Name: RE2RU_t271
+  CustomIcon: TradingCard01
+  Description: RE2RU_t272
+  MarketPrice: 100, display: true
+}
+{ Token Id: 126, Name: RE2RU_t273
+  CustomIcon: TradingCard01
+  Description: RE2RU_t274
+  MarketPrice: 100, display: true
+}
+{ Token Id: 127, Name: RE2RU_t275
+  CustomIcon: TradingCard01
+  Description: RE2RU_t276
+  MarketPrice: 100, display: true
+}
+{ Token Id: 128, Name: RE2RU_t277
+  CustomIcon: TradingCard01
+  Description: RE2RU_t278
+  MarketPrice: 100, display: true
+}
+{ Token Id: 129, Name: RE2RU_t279
+  CustomIcon: TradingCard01
+  Description: RE2RU_t280
+  MarketPrice: 400, display: true
+}
+{ Token Id: 130, Name: RE2RU_t281
+  CustomIcon: TradingCard01
+  Description: RE2RU_t282
+  MarketPrice: 100, display: true
+}
+{ Token Id: 131, Name: RE2RU_t283
+  CustomIcon: TradingCard01
+  Description: RE2RU_t284
+  MarketPrice: 100, display: true
+}
+{ Token Id: 132, Name: RE2RU_t285
+  CustomIcon: TradingCard01
+  Description: RE2RU_t286
+  MarketPrice: 400, display: true
+}
+{ Token Id: 133, Name: RE2RU_t287
+  CustomIcon: TradingCard01
+  Description: RE2RU_t288
+  MarketPrice: 400, display: true
+}
+{ Token Id: 134, Name: RE2RU_t289
+  CustomIcon: TradingCard01
+  Description: RE2RU_t290
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 135, Name: RE2RU_t291
+  CustomIcon: TradingCard01
+  Description: RE2RU_t292
+  MarketPrice: 100, display: true
+}
+{ Token Id: 136, Name: RE2RU_t293
+  CustomIcon: TradingCard01
+  Description: RE2RU_t294
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 137, Name: RE2RU_t295
+  CustomIcon: TradingCard01
+  Description: RE2RU_t296
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 138, Name: RE2RU_t297
+  CustomIcon: TradingCard01
+  Description: RE2RU_t298
+  MarketPrice: 400, display: true
+}
+{ Token Id: 139, Name: RE2RU_t299
+  CustomIcon: TradingCard01
+  Description: RE2RU_t300
+  MarketPrice: 100, display: true
+}
+{ Token Id: 140, Name: RE2RU_t301
+  CustomIcon: TradingCard01
+  Description: RE2RU_t302
+  MarketPrice: 400, display: true
+}
+{ Token Id: 141, Name: RE2RU_t303
+  CustomIcon: TradingCard01
+  Description: RE2RU_t304
+  MarketPrice: 5000, display: true
+}
+# ===== Structure Cards
+{ Token Id: 150, Name: RE2RU_t305
+  CustomIcon: TradingCard02
+  Description: RE2RU_t306
+  MarketPrice: 100, display: true
+}
+{ Token Id: 151, Name: RE2RU_t307
+  CustomIcon: TradingCard02
+  Description: RE2RU_t308
+  MarketPrice: 100, display: true
+}
+{ Token Id: 152, Name: RE2RU_t309
+  CustomIcon: TradingCard02
+  Description: RE2RU_t310
+  MarketPrice: 100, display: true
+}
+{ Token Id: 153, Name: RE2RU_t311
+  CustomIcon: TradingCard02
+  Description: RE2RU_t312
+  MarketPrice: 100, display: true
+}
+{ Token Id: 154, Name: RE2RU_t313
+  CustomIcon: TradingCard02
+  Description: RE2RU_t314
+  MarketPrice: 400, display: true
+}
+{ Token Id: 155, Name: RE2RU_t315
+  CustomIcon: TradingCard02
+  Description: RE2RU_t316
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 156, Name: RE2RU_t317
+  CustomIcon: TradingCard02
+  Description: RE2RU_t318
+  MarketPrice: 400, display: true
+}
+{ Token Id: 157, Name: RE2RU_t319
+  CustomIcon: TradingCard02
+  Description: RE2RU_t320
+  MarketPrice: 100, display: true
+}
+{ Token Id: 158, Name: RE2RU_t321
+  CustomIcon: TradingCard02
+  Description: RE2RU_t322
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 159, Name: RE2RU_t323
+  CustomIcon: TradingCard02
+  Description: RE2RU_t324
+  MarketPrice: 100, display: true
+}
+{ Token Id: 160, Name: RE2RU_t325
+  CustomIcon: TradingCard02
+  Description: RE2RU_t326
+  MarketPrice: 100, display: true
+}
+{ Token Id: 161, Name: RE2RU_t327
+  CustomIcon: TradingCard02
+  Description: RE2RU_t328
+  MarketPrice: 400, display: true
+}
+{ Token Id: 162, Name: RE2RU_t329
+  CustomIcon: TradingCard02
+  Description: RE2RU_t330
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 163, Name: RE2RU_t331
+  CustomIcon: TradingCard02
+  Description: RE2RU_t332
+  MarketPrice: 100, display: true
+}
+{ Token Id: 164, Name: RE2RU_t333
+  CustomIcon: TradingCard02
+  Description: RE2RU_t334
+  MarketPrice: 100, display: true
+}
+{ Token Id: 165, Name: RE2RU_t335
+  CustomIcon: TradingCard02
+  Description: RE2RU_t336
+  MarketPrice: 400, display: true
+}
+{ Token Id: 166, Name: RE2RU_t337
+  CustomIcon: TradingCard02
+  Description: RE2RU_t338
+  MarketPrice: 400, display: true
+}
+{ Token Id: 167, Name: RE2RU_t339
+  CustomIcon: TradingCard02
+  Description: RE2RU_t340
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 168, Name: RE2RU_t341
+  CustomIcon: TradingCard02
+  Description: RE2RU_t342
+  MarketPrice: 5000, display: true
+}
+{ Token Id: 169, Name: RE2RU_t343
+  CustomIcon: TradingCard02
+  Description: RE2RU_t344
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 170, Name: RE2RU_t345
+  CustomIcon: TradingCard02
+  Description: RE2RU_t346
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 171, Name: RE2RU_t347
+  CustomIcon: TradingCard02
+  Description: RE2RU_t348
+  MarketPrice: 400, display: true
+}
+# ===== Entity Cards
+{ Token Id: 180, Name: RE2RU_t349
+  CustomIcon: TradingCard03
+  Description: RE2RU_t350
+  MarketPrice: 100, display: true
+}
+{ Token Id: 181, Name: RE2RU_t351
+  CustomIcon: TradingCard03
+  Description: RE2RU_t352
+  MarketPrice: 100, display: true
+}
+{ Token Id: 182, Name: RE2RU_t353
+  CustomIcon: TradingCard03
+  Description: RE2RU_t354
+  MarketPrice: 100, display: true
+}
+{ Token Id: 183, Name: RE2RU_t355
+  CustomIcon: TradingCard03
+  Description: RE2RU_t356
+  MarketPrice: 100, display: true
+}
+{ Token Id: 184, Name: RE2RU_t357
+  CustomIcon: TradingCard03
+  Description: RE2RU_t358
+  MarketPrice: 400, display: true
+}
+{ Token Id: 185, Name: RE2RU_t359
+  CustomIcon: TradingCard03
+  Description: RE2RU_t360
+  MarketPrice: 1200, display: true
+}
+{ Token Id: 186, Name: RE2RU_t361
+  CustomIcon: TradingCard03
+  Description: RE2RU_t362
+  MarketPrice: 400, display: true
+}
+{ Token Id: 187, Name: RE2RU_t363
+  CustomIcon: TradingCard03
+  Description: RE2RU_t364
+  MarketPrice: 400, display: true
+}
+{ Token Id: 188, Name: RE2RU_t365
+  CustomIcon: TradingCard03
+  Description: RE2RU_t366
+  MarketPrice: 100, display: true
+}
+{ Token Id: 189, Name: RE2RU_t367
+  CustomIcon: TradingCard03
+  Description: RE2RU_t368
+  MarketPrice: 100, display: true
+}
+{ Token Id: 190, Name: RE2RU_t369
+  CustomIcon: TradingCard03
+  Description: RE2RU_t370
+  MarketPrice: 100, display: true
+}
+{ Token Id: 191, Name: RE2RU_t371
+  CustomIcon: TradingCard03
+  Description: RE2RU_t372
+  MarketPrice: 100, display: true
+}
+{ Token Id: 192, Name: RE2RU_t373
+  CustomIcon: TradingCard03
+  Description: RE2RU_t374
+  MarketPrice: 100, display: true
+}
+{ Token Id: 193, Name: RE2RU_t375
+  CustomIcon: TradingCard03
+  Description: RE2RU_t376
+  MarketPrice: 100, display: true
+}
+{ Token Id: 194, Name: RE2RU_t377
+  CustomIcon: TradingCard03
+  Description: RE2RU_t378
+  MarketPrice: 400, display: true
+}
+{ Token Id: 195, Name: RE2RU_t379
+  CustomIcon: TradingCard03
+  Description: RE2RU_t380
+  MarketPrice: 100, display: true
+}
+{ Token Id: 196, Name: RE2RU_t381
+  CustomIcon: TradingCard03
+  Description: RE2RU_t382
+  MarketPrice: 100, display: true
+}
+{ Token Id: 197, Name: RE2RU_t383
+  CustomIcon: TradingCard03
+  Description: RE2RU_t384
+  MarketPrice: 100, display: true
+}
+{ Token Id: 198, Name: RE2RU_t385
+  CustomIcon: TradingCard03
+  Description: RE2RU_t386
+  MarketPrice: 400, display: true
+}
+{ Token Id: 199, Name: RE2RU_t387
+  CustomIcon: TradingCard03
+  Description: RE2RU_t388
+  MarketPrice: 100, display: true
+}
+{ Token Id: 200, Name: RE2RU_t389
+  CustomIcon: TradingCard03
+  Description: RE2RU_t390
+  MarketPrice: 100, display: true
+}
+{ Token Id: 201, Name: RE2RU_t391
+  CustomIcon: TradingCard03
+  Description: RE2RU_t392
+  MarketPrice: 100, display: true
+}
+{ Token Id: 202, Name: RE2RU_t393
+  CustomIcon: TradingCard03
+  Description: RE2RU_t394
+  MarketPrice: 100, display: true
+}
+{ Token Id: 203, Name: RE2RU_t395
+  CustomIcon: TradingCard03
+  Description: RE2RU_t396
+  MarketPrice: 100, display: true
+}
+
+
+
+# ======================================================================================================================================================================
+# =================================================================================================================================Project Eden Custom Tokens:
+# ======================================================================================================================================================================
+
+# Admin Control Chip required to access admin settings
+{ Token Id: 6000, Name: RE2RU_t397
+  CustomIcon: Eden_GuideAdmin2
+  DropOnDeath: false
+  Description: RE2RU_t398
+}
+
+
+
+# ================================================================================================================================ Test Tokens
+
+# Test
+# { Token Id: 5000, Name: [c][FFFFFF]Contracted Cargo[-][/c]
+  # Description: [c][ffffff]Mission Item.[-][/c] \n\nDeliver this cargo to the TOP Manager on board the Polaris Trading Station in orbit around Haven Akua Tallodar Omicron Roggery or Ningues in the Alpha or Beta star systems.
+# }
+
+# { Token Id: 5001, Name: [c][FF00FF]Virus Sample 127-Beta[-][/c]
+  # Description: [c][ff00ff]Mission Item.[-][/c] \n\nA virus sample discovered by Polaris miners in the Deep Core Mining Facility on Helion IV. \nDeliver to the UCHN Artemis in orbit of Helion IV in the Helion system. \n\n[c][A9A9A9][i]Maybe you should not handle this with your bare hands?[/i][-][/c]
+# }
+
+# { Token Id: 5002, Name: [c][00FF00]Green Voucher[-][/c]
+  # Description: [c][FFFFFF]50000 Credits[-][/c] \n\nCash in at any Trader Guild Bank.
+# }
+
+# ================================================================================================================================ The Infected mission tokens
+# Lost Colony logs
+{ Token Id: 6001, Name: RE2RU_t399
+  DropOnDeath: false
+  Description: RE2RU_t400
+}
+
+# UCH Colony Ship logs
+{ Token Id: 6002, Name: RE2RU_t401
+  DropOnDeath: false
+  Description: RE2RU_t402
+}
+
+# Derelict Station/Lost Station logs
+{ Token Id: 6003, Name: RE2RU_t403
+  DropOnDeath: false
+  Description: RE2RU_t404
+}
+
+{ Token Id: 6004, Name: RE2RU_t405
+  CustomIcon: Eden_GuideOPV
+  DropOnDeath: false
+  Description: RE2RU_t406
+}
+
+# ================================================================================================================================ Deep Core Mining Keys
+
+# Deep Core Facility Access Key
+{ Token Id: 6005, Name: RE2RU_t407
+  DropOnDeath: false
+  Description: RE2RU_t408
+}
+
+# Derelict Station/Lost Station logs
+{ Token Id: 6006, Name: RE2RU_t409
+  DropOnDeath: false
+  Description: RE2RU_t410
+}
+
+# ================================================================================================================================ Tutorial Tokens:
+
+# --------------------------------------------------------- Solar System Surveys:
+
+# Alpha System Survey Report
+{ Token Id: 6012, Name: RE2RU_t411
+  CustomIcon: Eden_GuideSurveyAlpha
+  DropOnDeath: false
+  Description: RE2RU_t412
+}
+
+# Beta System Survey Report
+{ Token Id: 6013, Name: RE2RU_t413
+  CustomIcon: Eden_GuideSurveyBeta
+  DropOnDeath: false
+  Description: RE2RU_t414
+}
+
+# Delta System Survey Report
+{ Token Id: 6014, Name: RE2RU_t415
+  CustomIcon: Eden_GuideSurveyDelta
+  DropOnDeath: false
+  Description: RE2RU_t416
+}
+
+# Epsilon System Survey Report
+{ Token Id: 6015, Name: RE2RU_t417
+  CustomIcon: Eden_GuideSurveyEpsilon
+  DropOnDeath: false
+  Description: RE2RU_t418
+}
+
+
+# ================================================================================================================================ Starting planet tokens
+
+{ Token Id: 6016, Name: RE2RU_t419
+  CustomIcon: KeyCardRed
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t420
+}
+
+{ Token Id: 6017, Name: RE2RU_t421
+  CustomIcon: KeyCardYellow
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t420
+}
+
+{ Token Id: 6018, Name: RE2RU_t422
+  CustomIcon: KeyCardBlue
+  DropOnDeath: false
+  Description: RE2RU_t423
+}
+
+# On Dread starter
+{ Token Id: 6019, Name: RE2RU_t424
+  CustomIcon: Tablet
+  DropOnDeath: false
+  Description: RE2RU_t425
+}
+
+# Tokens for random starting planet selection
+{ Token Id: 6020, Name: RE2RU_t426
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  # Description: "Use on teleporter A in the random starting hub.\nThis token can be traded to other players or left in the public container in the starting hub for another player to follow you."
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6021, Name: RE2RU_t428
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6022, Name: RE2RU_t429
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6023, Name: RE2RU_t430
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6024, Name: RE2RU_t431
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6025, Name: RE2RU_t432
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6026, Name: RE2RU_t433
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6027, Name: RE2RU_t434
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6028, Name: RE2RU_t435
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6029, Name: RE2RU_t436
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6030, Name: RE2RU_t437
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6031, Name: RE2RU_t438
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6032, Name: RE2RU_t439
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6033, Name: RE2RU_t440
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6034, Name: RE2RU_t441
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6035, Name: RE2RU_t442
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6036, Name: RE2RU_t443
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6037, Name: RE2RU_t444
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6038, Name: RE2RU_t445
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6039, Name: RE2RU_t446
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6040, Name: RE2RU_t447
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+{ Token Id: 6041, Name: RE2RU_t448
+  CustomIcon: KeyCardBlack
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: Eden_RandomStartinfo
+}
+
+# ================================================================================================================================ Trading seperators
+# old color [CC99FF]
+# Encrypted Data Chip
+{ Token Id: 6101, Name: RE2RU_t449
+  CustomIcon: GoldCoins
+  Description: RE2RU_t450
+}
+
+# Flawed Data Chip
+{ Token Id: 6102, Name: RE2RU_t451
+  CustomIcon: MoneyCard
+  Description: RE2RU_t452
+}
+
+{ Token Id: 6103, Name: RE2RU_t453
+  CustomIcon: GoldIngot
+  Description: RE2RU_t454
+}
+
+# Progenitor Translation Matrix
+{ Token Id: 6104, Name: RE2RU_t455
+  CustomIcon: Eden_ProgenitorTranslationMatrix
+  DropOnDeath: false
+  Description: RE2RU_t456
+}
+
+# ================================================================================================================================ Object 82 Keys.
+
+# Progenitor Key I - Object 1
+{ Token Id: 6105, Name: RE2RU_t457
+  CustomIcon: Eden_ObjectKey1
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t458
+}
+
+# Progenitor Key II - Object 13
+{ Token Id: 6106, Name: RE2RU_t459
+  CustomIcon: Eden_ObjectKey2
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t460
+}
+
+# Progenitor Key III - Object 42
+{ Token Id: 6107, Name: RE2RU_t461
+  CustomIcon: Eden_ObjectKey3
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t462
+}
+
+# Progenitor Key IV - Object 276
+{ Token Id: 6108, Name: RE2RU_t463
+  CustomIcon: Eden_ObjectKey4
+  DropOnDeath: false
+  RemoveOnUse: true
+  Description: RE2RU_t464
+}
+
+
+# ================================================================================================================================ Talon Relics
+
+# Relic of the Sun
+{ Token Id: 6109, Name: RE2RU_t465
+  CustomIcon: Eden_RelicoftheSun
+  DropOnDeath: false
+  Description: RE2RU_t466
+}
+
+# Relic of the Moon
+{ Token Id: 6110, Name: RE2RU_t467
+  CustomIcon: Eden_RelicoftheMoon
+  DropOnDeath: false
+  Description: RE2RU_t468
+}
+
+# Shard of the Sun
+{ Token Id: 6111, Name: RE2RU_t469
+  CustomIcon: Eden_RelicoftheSun
+  DropOnDeath: false
+  Description: RE2RU_t470
+}
+
+# Shard of the Moon
+{ Token Id: 6112, Name: RE2RU_t471
+  CustomIcon: Eden_RelicoftheMoon
+  DropOnDeath: false
+  Description: RE2RU_t472
+}
+
+# Corrupted Shard of the Stars
+{ Token Id: 6113, Name: RE2RU_t473
+  CustomIcon: Eden_RelicoftheStarsCorrupt
+  DropOnDeath: false
+  Description: RE2RU_t474
+}
+
+# Shard of the Stars
+{ Token Id: 6114, Name: RE2RU_t475
+  CustomIcon: Eden_RelicoftheStars
+  DropOnDeath: false
+  Description: RE2RU_t476
+}
+
+# Depleted Progenitor Translation Matrix
+{ Token Id: 6115, Name: RE2RU_t477
+  CustomIcon: Eden_ProgenitorTranslationMatrix2
+  DropOnDeath: false
+  Description: RE2RU_t478
+}
+
+# Overgrown Flower Sample found in Desert Oasis caves
+{ Token Id: 6116, Name: RE2RU_t479
+  CustomIcon: Eden_FlowerOrange
+  Description: RE2RU_t480
+}
+
+# Underground Insects found in Jungle caves
+{ Token Id: 6117, Name: RE2RU_t481
+  CustomIcon: Eden_FireflyOrange
+  Description: RE2RU_t482
+}
+
+# Underground Insects found in Jungle caves
+{ Token Id: 6118, Name: RE2RU_t483
+  CustomIcon: Eden_GuideVirusGreen
+  Description: RE2RU_t484
+}
+
+# Underground Insects found in Jungle caves
+{ Token Id: 6119, Name: RE2RU_t485
+  CustomIcon: Eden_SporesPurple
+  Description: RE2RU_t486
+}
+
+# Underground Insects found in Jungle caves
+{ Token Id: 6120, Name: RE2RU_t487
+  Description: RE2RU_t488
+  MarketPrice: 50000, display: true
+}
+
+# Info on mine for Combat Site Eden_CombatT2_3
+{ Token Id: 6121, Name: RE2RU_t489
+  CustomIcon: Tablet
+  Description: RE2RU_t490
+  MarketPrice: 50000, display: true
+}
+
+# Music sample from Syndicate Casino to Pirates Distribution Center (Freeport).
+{ Token Id: 6122, Name: RE2RU_t491
+  CustomIcon: Eden_GuideMusic
+  Description: RE2RU_t492
+  MarketPrice: 25000, display: true
+}
+
+# Narrow Band scan report for exploration missions.
+{ Token Id: 6123, Name: RE2RU_t493
+  CustomIcon: Eden_GuideTextBlue
+  Description: RE2RU_t494
+  MarketPrice: 25, display: true
+}
+
+# For hidden secret on UCH Research Vessels
+{ Token Id: 6124, Name: RE2RU_t495
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t496
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+  RemoveOnUse: true
+}
+
+{ Token Id: 6125, Name: RE2RU_t497
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t496
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+  RemoveOnUse: true
+}
+
+{ Token Id: 6126, Name: RE2RU_t498
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t496
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+  RemoveOnUse: true
+}
+
+{ Token Id: 6127, Name: RE2RU_t499
+  CustomIcon: KeyCardRed
+  Description: RE2RU_t500
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+}
+
+{ Token Id: 6128, Name: RE2RU_t501
+  CustomIcon: KeyCardRed
+  Description: RE2RU_t502
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+  RemoveOnUse: true
+}
+
+{ Token Id: 6129, Name: RE2RU_t503
+  CustomIcon: KeyCardRed
+  Description: RE2RU_t504
+  MarketPrice: 25, display: true
+  DropOnDeath: false
+}
+
+# For mission Expedition: Dronelands
+{ Token Id: 6130, Name: RE2RU_t505
+  CustomIcon: Eden_BrokenDroneProcessor
+  DropOnDeath: false
+  Description: RE2RU_t506
+}
+
+# For mission on desert crystal planets
+{ Token Id: 6131, Name: RE2RU_t507
+  CustomIcon: Eden_GuideTextOrange
+  Description: RE2RU_t508
+}
+
+# Generic Tal'on Treasure Key for opening locked Treasure Boxes
+{ Token Id: 6132, Name: RE2RU_t509
+  CustomIcon: Eden_TreasureKey
+  Description: RE2RU_t510
+  RemoveOnUse: true
+}
+
+# Crystal tablet
+{ Token Id: 6133, Name: RE2RU_t511
+  CustomIcon: Eden_TabletAmber
+  Description: RE2RU_t512
+}
+
+# Packaged crystal tablet
+{ Token Id: 6134, Name: RE2RU_t513
+  CustomIcon: Eden_Chest
+  Description: RE2RU_t514
+}
+
+# =============================================== Tokens for Smuggler missions
+{ Token Id: 6135, Name: RE2RU_t515
+  CustomIcon: Eden_Chest
+  Description: RE2RU_t516
+}
+
+{ Token Id: 6136, Name: RE2RU_t517
+  CustomIcon: Eden_ArkBankLedger
+  Description: RE2RU_t518
+}
+
+{ Token Id: 6137, Name: RE2RU_t519
+  CustomIcon: CargoPalette04
+  Description: RE2RU_t516
+}
+
+{ Token Id: 6138, Name: RE2RU_t520
+  CustomIcon: Eden_GuideTextOrange
+  Description: RE2RU_t521
+}
+
+# ================================================================================================================================ Tokens for message deliveries
+
+{ Token Id: 6150, Name: RE2RU_t522
+  CustomIcon: Eden_GuideTextBlue
+  Description: RE2RU_t523
+  MarketPrice: 50000, display: true
+}
+
+{ Token Id: 6151, Name: RE2RU_t524
+  CustomIcon: Eden_GuideTextOrange
+  Description: RE2RU_t525
+  MarketPrice: 35000, display: true
+}
+
+{ Token Id: 6152, Name: RE2RU_t526
+  CustomIcon: Eden_GuideTextBlueLight
+  Description: RE2RU_t527
+  MarketPrice: 25000, display: true
+}
+
+# ================================================================================================================================ Licenses Rewards
+
+# Polaris Refinery License
+{ Token Id: 6201, Name: RE2RU_t528
+  CustomIcon: Eden_PolarisRefinery
+  Description: RE2RU_t529
+  # Description: Eden_PolarisRefineryLicenseinfo
+  MarketPrice: 500000, display: true
+}
+
+# Colonists Refinery License
+{ Token Id: 6202, Name: RE2RU_t530
+  CustomIcon: Eden_ScrapyardLicense
+  Description: RE2RU_t531
+  # Description: Eden_PolarisRefineryLicenseinfo
+  MarketPrice: 50000, display: true
+  RemoveOnUse: true
+}
+
+{ Token Id: 6203, Name: RE2RU_t532
+  Description: RE2RU_t533
+  # Description: Eden_PolarisRefineryLicenseinfo
+  MarketPrice: 50000, display: true
+  RemoveOnUse: true
+}
+
+# Summons UCH Research Vessel
+{ Token Id: 6204, Name: RE2RU_t534
+  CustomIcon: Eden_UCHBeacon
+  Description: RE2RU_t535
+  DropOnDeath: false
+}
+
+# Exploration Data
+# { Token Id: 6202, Name: Exploration Data
+  # # CustomIcon: Eden_RelicoftheMoon
+  # Description: This token is not currently used but may have a use in a future update. Hold on to it!
+  # MarketPrice: 100000, display: true
+# }
+
+
+# ================================================================================================================================ Keycards
+
+# Syndicate Access Card
+{ Token Id: 6301, Name: RE2RU_t536
+  CustomIcon: Eden_SyndicateCard
+  Description: RE2RU_t537
+}
+
+{ Token Id: 6302, Name: RE2RU_t538
+  Description: RE2RU_t539
+}
+
+{ Token Id: 6303, Name: RE2RU_t540
+  CustomIcon: KeyCardYellow
+  RemoveOnUse: true
+  Description: RE2RU_t541
+  MarketPrice: 25000, display: true
+}
+
+{ Token Id: 6304, Name: RE2RU_t542
+  CustomIcon: Tablet
+  Description: RE2RU_t543
+  MarketPrice: 25, display: true
+}
+
+{ Token Id: 6305, Name: RE2RU_t544
+  CustomIcon: Tablet
+  Description: RE2RU_t545
+  MarketPrice: 25, display: true
+}
+
+{ Token Id: 6306, Name: RE2RU_t546
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t547
+  RemoveOnUse: true
+}
+
+{ Token Id: 6307, Name: RE2RU_t548
+  CustomIcon: Tablet
+  Description: RE2RU_t549
+  MarketPrice: 5, display: true
+}
+
+{ Token Id: 6308, Name: RE2RU_t550
+  CustomIcon: Tablet
+  Description: RE2RU_t551
+}
+
+{ Token Id: 6309, Name: RE2RU_t552
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t553
+  RemoveOnUse: true
+}
+
+{ Token Id: 6310, Name: RE2RU_t554
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t555
+}
+
+{ Token Id: 6311, Name: RE2RU_t556
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t557
+  RemoveOnUse: true
+}
+
+{ Token Id: 6312, Name: RE2RU_t558
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t559
+  RemoveOnUse: true
+}
+
+{ Token Id: 6313, Name: RE2RU_t560
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t561
+  RemoveOnUse: true
+}
+
+{ Token Id: 6314, Name: RE2RU_t562
+  CustomIcon: KeyCardYellow
+  RemoveOnUse: true
+  Description: RE2RU_t563
+  MarketPrice: 500, display: true
+}
+
+{ Token Id: 6315, Name: RE2RU_t564
+  CustomIcon: KeyCardYellow
+  RemoveOnUse: true
+  Description: RE2RU_t565
+  MarketPrice: 500, display: true
+}
+# ================================================================================================================================ Schematics
+# Encrypted Schematic
+{ Token Id: 6400, Name: RE2RU_t566
+  CustomIcon: Eden_RecipeRandom2
+  DropOnDeath: false
+  Description: Eden_EncryptedSchematicinfo
+  MarketPrice: 50000, display: true
+}
+
+# Sentinel Flak Turret
+{ Token Id: 6401, Name: RE2RU_t568
+  CustomIcon: Eden_TurretFlakClose_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t569
+  MarketPrice: 50000, display: true
+}
+
+# Small Vulcan Turret
+{ Token Id: 6402, Name: RE2RU_t570
+  CustomIcon: Eden_TurretVulcanSmall_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t571
+  MarketPrice: 50000, display: true
+}
+
+# Nanite Injectors
+{ Token Id: 6403, Name: RE2RU_t572
+  CustomIcon: Eden_RegenKit_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t573
+  MarketPrice: 50000, display: true
+}
+
+# Advanced Nanite Injectors
+{ Token Id: 6404, Name: RE2RU_t574
+  CustomIcon: Eden_RegenKit_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t573
+  MarketPrice: 50000, display: true
+}
+
+# Appleseed Brews
+{ Token Id: 6405, Name: RE2RU_t575
+  CustomIcon: Eden_WarpCoreMoonshine_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t576
+  MarketPrice: 50000, display: true
+}
+
+# Advanced Bandages
+{ Token Id: 6406, Name: RE2RU_t577
+  CustomIcon: Eden_BandagesT2_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t573
+  MarketPrice: 50000, display: true
+}
+
+# Heavy Railgun Turret
+{ Token Id: 6407, Name: RE2RU_t578
+  CustomIcon: Eden_TurretRailgunHeavy_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t579
+  MarketPrice: 50000, display: true
+}
+
+# Incendiary Minigun
+{ Token Id: 6408, Name: RE2RU_t580
+  CustomIcon: Eden_MinigunIncendiary_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t573
+  MarketPrice: 50000, display: true
+}
+
+# Syndicate Heavy Blaster
+{ Token Id: 6409, Name: RE2RU_t581
+  CustomIcon: Eden_BlasterCV_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t582
+  MarketPrice: 50000, display: true
+}
+
+# Rapid Fire CV Torpedo Launcher
+{ Token Id: 6410, Name: RE2RU_t583
+  CustomIcon: Eden_CVTorpedoRapid_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t571
+  MarketPrice: 100000, display: true
+}
+
+# Rapid Light Railgun
+{ Token Id: 6411, Name: RE2RU_t584
+  CustomIcon: Eden_RailgunCVSpinal_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t585
+  MarketPrice: 200000, display: true
+}
+
+# Automated Industrial Mining Rig
+{ Token Id: 6412, Name: RE2RU_t586
+  CustomIcon: Eden_AutoMiningDeviceT4_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t576
+  MarketPrice: 300000, display: true
+}
+
+# Large Vulcan Turret
+{ Token Id: 6413, Name: RE2RU_t587
+  CustomIcon: Eden_TurretVulcanSmall_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t571
+  MarketPrice: 100000, display: true
+}
+
+# Automated Industrial Mining Rig
+{ Token Id: 6414, Name: RE2RU_t588
+  CustomIcon: Eden_DrillIceTurretCV_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t576
+  MarketPrice: 100000, display: true
+}
+
+# Automated Industrial Mining Rig
+{ Token Id: 6415, Name: RE2RU_t589
+  CustomIcon: Eden_DrillTurretAutoCV_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t576
+  MarketPrice: 300000, display: true
+}
+
+# Advanced Wind Turbine
+{ Token Id: 6416, Name: RE2RU_t590
+  CustomIcon: Eden_WindTurbineActiveT2_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t591
+  MarketPrice: 200000, display: true
+}
+
+# Industrial Water Extractor
+{ Token Id: 6417, Name: RE2RU_t592
+  CustomIcon: Eden_WaterGeneratorT2_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t593
+  MarketPrice: 50000, display: true
+}
+
+# Phalanx Battery (Heavy)
+{ Token Id: 6418, Name: RE2RU_t594
+  CustomIcon: Eden_WeaponCVHeavyVulcanT3_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t585
+  MarketPrice: 200000, display: true
+}
+
+# Shielded Fusion Reactor
+{ Token Id: 6419, Name: RE2RU_t595
+  CustomIcon: FusionReactorShieldedLarge_Recipe
+  DropOnDeath: false
+  Description: RE2RU_t585
+  MarketPrice: 200000, display: true
+}
+
+# ================================================================================================================================ Mission Tokens
+
+# ----------------------------------------------------------------------------------------- Frontier mission
+# Communications Log
+{ Token Id: 6501, Name: RE2RU_t596
+  Description: RE2RU_t597
+}
+
+# Teleporter Key
+{ Token Id: 6502, Name: RE2RU_t598
+  RemoveOnUse: true
+  Description: RE2RU_t599
+}
+
+
+# ----------------------------------------------------------------------------------------- Random UCH Captain missions
+# UCH Token of Service
+{ Token Id: 6503, Name: RE2RU_t600
+  Description: RE2RU_t601
+}
+
+# ----------------------------------------------------------------------------------------- Upgrade tokens
+# Exploration Data
+{ Token Id: 6504, Name: RE2RU_t602
+  CustomIcon: KeyCardBlue
+  Description: RE2RU_t603
+  MarketPrice: 10000, display: true
+}
+
+# int Eden_G_DataChipT1R = 1; int Eden_G_DataChipT1C = 10000; int Eden_G_DataChipT1UP = 10; int Eden_G_DataChipT2R = 5; int Eden_G_DataChipT2C = 50000; int Eden_G_DataChipT2UP = 50; int Eden_G_DataChipT3R = 10; int Eden_G_DataChipT3C = 100000; int Eden_G_DataChipT3UP = 100;
+# int Eden_G_BanditRewardT1 = 20000; int Eden_G_BanditRewardT2 = 40000; int Eden_G_BanditRewardT3 = 80000; int Eden_G_BountyRewardT1 = 100000; int Eden_G_BountyRewardT2 = 250000; int Eden_G_BountyRewardT3 = 500000;
+# int Eden_G_BanditRepT1 = 50; int Eden_G_BanditRepT2 = 75; int Eden_G_BanditRepT3 = 100; int Eden_G_BountyRepT1 = 100; int Eden_G_BountyRepT2 = 175; int Eden_G_BountyRepT3 = 250;
+# int Eden_Global_DataPad = 50;
+
+
+
+
+# Reward from bandits. T1
+{ Token Id: 6505, Name: RE2RU_t604
+  CustomIcon: Eden_InsigniaBanditT1
+  Description: RE2RU_t605
+  MarketPrice: 20000, display: true
+}
+
+# Reward from raiders. T2
+{ Token Id: 6506, Name: RE2RU_t606
+  CustomIcon: Eden_InsigniaBanditT2
+  Description: RE2RU_t607
+  MarketPrice: 40000, display: true
+}
+
+# Reward from reavers. T3
+{ Token Id: 6507, Name: RE2RU_t608
+  CustomIcon: Eden_InsigniaBanditT3
+  Description: RE2RU_t609
+  MarketPrice: 80000, display: true
+}
+
+# Bounty reward T1.
+{ Token Id: 6508, Name: RE2RU_t610
+  CustomIcon: Eden_InsigniaBountyT1
+  Description: RE2RU_t611
+  MarketPrice: 100000, display: true
+}
+
+# Bounty reward T2.
+{ Token Id: 6509, Name: RE2RU_t612
+  CustomIcon: Eden_InsigniaBountyT2
+  Description: RE2RU_t613
+  MarketPrice: 250000, display: true
+}
+
+# Bounty reward T3.
+{ Token Id: 6510, Name: RE2RU_t614
+  CustomIcon: Eden_InsigniaBountyT3
+  Description: RE2RU_t615
+  MarketPrice: 500000, display: true
+}
+
+# ----------------------------------------------------------------------------------------- Mining Site Loot
+
+# Mining Reward Tier 1
+{ Token Id: 6511, Name: RE2RU_t616
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# Mining Reward Tier 2
+{ Token Id: 6512, Name: RE2RU_t618
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# Mining Reward Tier 3
+{ Token Id: 6513, Name: RE2RU_t619
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# Mining Reward Tier 4
+{ Token Id: 6514, Name: RE2RU_t620
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# Mining Reward Tier 5
+{ Token Id: 6515, Name: RE2RU_t621
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# Mining Reward Tier 6
+{ Token Id: 6516, Name: RE2RU_t622
+  CustomIcon: AlienContainerRare
+  Description: RE2RU_t617
+  MarketPrice: 50000, display: true
+}
+
+# ----------------------------------------------------------------------------------------- Combat Site Loot
+
+# Combat Reward Tier 1
+{ Token Id: 6521, Name: RE2RU_t623
+  CustomIcon: Eden_CacheCombatT1
+  # Description: "A sealed crate that may contain stolen supplies, military equipment, or other items.\nOpen using a science station on board your ship or base."
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 50000, display: true
+}
+
+# Combat Reward Tier 2
+{ Token Id: 6522, Name: RE2RU_t625
+  CustomIcon: Eden_CacheCombatT2
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 100000, display: true
+}
+
+# Combat Reward Tier 3
+{ Token Id: 6523, Name: RE2RU_t626
+  CustomIcon: Eden_CacheCombatT3
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 150000, display: true
+}
+
+# Combat Reward Tier 4
+{ Token Id: 6524, Name: RE2RU_t627
+  CustomIcon: Eden_CacheCombatT4
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 200000, display: true
+}
+
+# Combat Reward Tier 5
+{ Token Id: 6525, Name: RE2RU_t628
+  CustomIcon: Eden_CacheCombatT5
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 250000, display: true
+}
+
+# Combat Reward Tier 6
+{ Token Id: 6526, Name: RE2RU_t629
+  CustomIcon: Eden_CacheCombatT6
+  Description: Eden_CacheCombatinfo
+  MarketPrice: 300000, display: true
+}
+
+# ----------------------------------------------------------------------------------------- Alien Loot
+# Alien reward caches
+{ Token Id: 6527, Name: RE2RU_t630
+  CustomIcon: AlienContainer
+  Description: Eden_CacheAlieninfo
+  MarketPrice: 10000, display: false
+}
+
+{ Token Id: 6528, Name: RE2RU_t632
+  CustomIcon: AlienContainerRare
+  Description: Eden_CacheAlieninfo
+  MarketPrice: 20000, display: false
+}
+
+{ Token Id: 6529, Name: RE2RU_t633
+  CustomIcon: AlienContainerVeryRare
+  Description: Eden_CacheAlieninfo
+  MarketPrice: 40000, display: false
+}
+
+{ Token Id: 6530, Name: RE2RU_t634
+  CustomIcon: AlienContainerUltraRare
+  Description: Eden_CacheAlieninfo
+  MarketPrice: 60000, display: false
+}
+
+{ Token Id: 6531, Name: RE2RU_t635
+  CustomIcon: CargoBoxLegacy
+  Description: Eden_CacheAlieninfo
+  MarketPrice: 60000, display: false
+}
+
+# ----------------------------------------------------------------------------------------- Supply Caches
+
+{ Token Id: 6540, Name: RE2RU_t636
+  CustomIcon: AlienContainer
+  Description: RE2RU_t637
+  MarketPrice: 10000, display: false
+}
+
+# ----------------------------------------------------------------------------------------- Exploration reports
+
+# Subspace Anomalies
+{ Token Id: 6550, Name: RE2RU_t638
+  CustomIcon: Eden_DataExplorationT1
+  Description: RE2RU_t639
+  MarketPrice: 5000, display: true
+}
+
+{ Token Id: 6551, Name: RE2RU_t640
+  CustomIcon: Eden_DataExplorationT2
+  Description: RE2RU_t639
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6552, Name: RE2RU_t641
+  CustomIcon: Eden_DataExplorationT3
+  Description: RE2RU_t639
+  MarketPrice: 20000, display: true
+}
+
+{ Token Id: 6553, Name: RE2RU_t642
+  CustomIcon: Eden_DataExplorationT4
+  Description: RE2RU_t639
+  MarketPrice: 30000, display: true
+}
+
+{ Token Id: 6554, Name: RE2RU_t643
+  CustomIcon: Eden_DataExplorationT5
+  Description: RE2RU_t639
+  MarketPrice: 40000, display: true
+}
+
+{ Token Id: 6555, Name: RE2RU_t644
+  CustomIcon: Eden_DataExplorationT6
+  Description: RE2RU_t639
+  MarketPrice: 50000, display: true
+}
+
+# Expedition starts
+{ Token Id: 6556, Name: RE2RU_t645
+  CustomIcon: Eden_ExpeditionExploreT1
+  # Description: "This item currently has no use. It may get a use later on. Exploration system is currently in testing."
+  Description: RE2RU_t646
+  MarketPrice: 50000, display: true
+}
+
+{ Token Id: 6557, Name: RE2RU_t647
+  CustomIcon: Eden_ExpeditionExploreT2
+  Description: RE2RU_t646
+  MarketPrice: 50000, display: true
+}
+
+{ Token Id: 6558, Name: RE2RU_t648
+  CustomIcon: Eden_ExpeditionExploreT3
+  Description: RE2RU_t646
+  MarketPrice: 50000, display: true
+}
+
+# Expedition reports
+{ Token Id: 6559, Name: RE2RU_t649
+  CustomIcon: Eden_ExpeditionExploreT1
+  Description: RE2RU_t650
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6560, Name: RE2RU_t651
+  CustomIcon: Eden_ExpeditionExploreT1
+  Description: RE2RU_t650
+  MarketPrice: 200000, display: true
+}
+
+{ Token Id: 6561, Name: RE2RU_t652
+  CustomIcon: Eden_ExpeditionExploreT1
+  Description: RE2RU_t650
+  MarketPrice: 300000, display: true
+}
+
+{ Token Id: 6562, Name: RE2RU_t653
+  CustomIcon: Eden_ExpeditionExploreT1
+  Description: RE2RU_t650
+  MarketPrice: 400000, display: true
+}
+
+
+
+
+# ================================================================================================================================ Bounty tokens
+
+# -------------------------------------------------------------------------- Wanted by Colonists
+# Savanth Greenzald's Insignia
+{ Token Id: 6601, Name: RE2RU_t654
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t655
+  MarketPrice: 50000, display: true
+}
+
+# Marko Inero's Insignia - Pirate Battlestation
+{ Token Id: 6602, Name: RE2RU_t656
+  CustomIcon: Eden_InsigniaPirates
+  Description: RE2RU_t657
+  MarketPrice: 50000, display: true
+}
+
+# Small Tony's Insignia - Large Wrecks
+{ Token Id: 6603, Name: RE2RU_t658
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t659
+  MarketPrice: 50000, display: true
+}
+
+# Greeza Zeerzhi's Insignia
+{ Token Id: 6604, Name: RE2RU_t660
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t661
+  MarketPrice: 100000, display: true
+}
+
+# The Steel Hammer's Insignia
+{ Token Id: 6605, Name: RE2RU_t662
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t661
+  MarketPrice: 100000, display: true
+}
+
+# Captain Pang's Insignia - Polaris Freighter Attacks
+{ Token Id: 6606, Name: RE2RU_t663
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t664
+  MarketPrice: 150000, display: true
+}
+
+# Yerzhu the Smuggler's Insignia
+{ Token Id: 6607, Name: RE2RU_t665
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t661
+  MarketPrice: 150000, display: true
+}
+
+# Warlord Khrang's Insignia
+{ Token Id: 6608, Name: RE2RU_t666
+  CustomIcon: Eden_InsigniaZirax
+  Description: RE2RU_t667
+  MarketPrice: 150000, display: true
+}
+
+# 
+{ Token Id: 6609, Name: RE2RU_t668
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t661
+  MarketPrice: 150000, display: true
+}
+
+# 
+{ Token Id: 6610, Name: RE2RU_t669
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t661
+  MarketPrice: 150000, display: true
+}
+
+# -------------------------------------------------------------------------- Wanted by Zirax
+# 
+{ Token Id: 6611, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t671
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6612, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6613, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6614, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 100000, display: true
+}
+
+# 
+{ Token Id: 6615, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 100000, display: true
+}
+
+# 
+{ Token Id: 6616, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6617, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6618, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6619, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6620, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t672
+  MarketPrice: 150000, display: true
+}
+
+# -------------------------------------------------------------------------- Wanted by Polaris
+# Groktan Klous - Raider Headquarters
+{ Token Id: 6621, Name: RE2RU_t673
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t674
+  MarketPrice: 50000, display: true
+}
+
+# Smuggler Gorn - Smuggler Outpost
+{ Token Id: 6622, Name: RE2RU_t675
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t676
+  MarketPrice: 50000, display: true
+}
+
+# Korne the Outcast
+{ Token Id: 6623, Name: RE2RU_t677
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t678
+  MarketPrice: 150000, display: true
+}
+
+# Director Crennek
+{ Token Id: 6624, Name: RE2RU_t679
+  CustomIcon: Eden_InsigniaZirax
+  Description: RE2RU_t680
+  MarketPrice: 200000, display: true
+}
+
+# 
+{ Token Id: 6625, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 100000, display: true
+}
+
+# 
+{ Token Id: 6626, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6627, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6628, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6629, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6630, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t681
+  MarketPrice: 150000, display: true
+}
+
+# -------------------------------------------------------------------------- Wanted by Trader
+# Bandit Lookout
+{ Token Id: 6631, Name: RE2RU_t682
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t683
+  MarketPrice: 50000, display: true
+}
+
+# Pirate Drug Farm
+{ Token Id: 6632, Name: RE2RU_t684
+  CustomIcon: Eden_InsigniaPirates
+  Description: RE2RU_t685
+  # Description: Eden_Token6632info
+  MarketPrice: 50000, display: true
+}
+
+# Class 3 SV Mining Sites
+{ Token Id: 6633, Name: RE2RU_t686
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t687
+  MarketPrice: 500000, display: true
+}
+
+# 
+{ Token Id: 6634, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t688
+  MarketPrice: 100000, display: true
+}
+
+# Sansa Kuvera
+{ Token Id: 6635, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t689
+  MarketPrice: 100000, display: true
+}
+
+# Captain Xorchek - Patrolling hot orbits.
+{ Token Id: 6636, Name: RE2RU_t690
+  CustomIcon: Eden_InsigniaZirax
+  Description: RE2RU_t691
+  MarketPrice: 200000, display: true
+}
+
+# The Three Angels
+{ Token Id: 6637, Name: RE2RU_t692
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t688
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6638, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t688
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6639, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t688
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6640, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t688
+  MarketPrice: 150000, display: true
+}
+
+# -------------------------------------------------------------------------- Wanted by Pirates
+# 
+{ Token Id: 6641, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6642, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6643, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 50000, display: true
+}
+
+# 
+{ Token Id: 6644, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 100000, display: true
+}
+
+# 
+{ Token Id: 6645, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 100000, display: true
+}
+
+# 
+{ Token Id: 6646, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6647, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6648, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6649, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6650, Name: RE2RU_t670
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t693
+  MarketPrice: 150000, display: true
+}
+
+#
+{ Token Id: 6651, Name: RE2RU_t694
+  CustomIcon: Eden_InsigniaBandits
+  Description: RE2RU_t695
+  MarketPrice: 200000, display: true
+}
+
+
+# ================================================================================================================================ Bulk Trading Tokens
+
+# Free Colonists
+{ Token Id: 6700, Name: RE2RU_t696
+  CustomIcon: CargoContainerSV
+  Description: RE2RU_t697
+  MarketPrice: 2500, display: true
+}
+
+{ Token Id: 6701, Name: RE2RU_t698
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t699
+  MarketPrice: 20000, display: true
+}
+
+{ Token Id: 6702, Name: RE2RU_t700
+  CustomIcon: ContainerMS02Large
+  Description: RE2RU_t701
+  MarketPrice: 100000, display: true
+}
+
+# Polaris
+{ Token Id: 6703, Name: RE2RU_t702
+  CustomIcon: CargoContainerSV
+  Description: RE2RU_t703
+  MarketPrice: 2500, display: true
+}
+
+{ Token Id: 6704, Name: RE2RU_t704
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t705
+  MarketPrice: 20000, display: true
+}
+
+{ Token Id: 6705, Name: RE2RU_t706
+  CustomIcon: ContainerMS02Large
+  Description: RE2RU_t707
+  MarketPrice: 100000, display: true
+}
+
+# Zirax
+{ Token Id: 6706, Name: RE2RU_t708
+  CustomIcon: CargoContainerSV
+  Description: RE2RU_t709
+  MarketPrice: 3000, display: true
+}
+
+{ Token Id: 6707, Name: RE2RU_t710
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t711
+  MarketPrice: 20000, display: true
+}
+
+{ Token Id: 6708, Name: RE2RU_t712
+  CustomIcon: ContainerMS02Large
+  Description: RE2RU_t713
+  MarketPrice: 100000, display: true
+}
+
+# Pirates
+{ Token Id: 6709, Name: RE2RU_t714
+  CustomIcon: CargoContainerSV
+  Description: RE2RU_t715
+  MarketPrice: 2500, display: true
+}
+
+{ Token Id: 6710, Name: RE2RU_t716
+  CustomIcon: ScifiContainer1Small
+  Description: RE2RU_t717
+  MarketPrice: 20000, display: true
+}
+
+{ Token Id: 6711, Name: RE2RU_t718
+  CustomIcon: ContainerMS02Large
+  Description: RE2RU_t719
+  MarketPrice: 100000, display: true
+}
+
+# Trade Beacons for finding trade stations and factories.
+# FactoryPolarisRG1
+{ Token Id: 6712, Name: RE2RU_t720
+  CustomIcon: Eden_GuidePlanetsideProduction
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  # Description: "A data pad containing the communication frequency of a specific trading station or factory. Can be used to help locate the factory.\n\n[c][00FFFF]Requirements:[-][/c]\n[sup][c][FFFFFF]-Must be friendly with Trade Federation.\n-Must be in personal inventory.\n-If you have changed playfields or restarted the game move any item into or out of your inventory to update the PDA.\n-Activate the tracking mission under PDA > Trading.\n-Place the required scanning probe in your personal toolbar.\n-As long as the mission is currently active you will get a notification on your HUD if you enter a playfield that contains the factory you are tracking.\n-Does not pinpoint the exact location, only whether or not it exists in your current planet, moon, or sector to save time having to fully explore the area.\n-The trading frequency is reusable and can be activated again in the PDA.[/sup][-][/c]"
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6713, Name: RE2RU_t722
+  CustomIcon: Eden_GuideWasteTreatment
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6714, Name: RE2RU_t723
+  CustomIcon: Eden_GuideSolarisAmp
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6715, Name: RE2RU_t724
+  CustomIcon: Eden_GuideThermalInteractions
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6716, Name: RE2RU_t725
+  CustomIcon: Eden_GuideVitalife
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+# FactoryPolarisRG2
+{ Token Id: 6717, Name: RE2RU_t726
+  CustomIcon: Eden_GuideArriake
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6718, Name: RE2RU_t727
+  CustomIcon: Eden_GuideGoldStandard
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6719, Name: RE2RU_t728
+  CustomIcon: Eden_GuideChemmix
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6720, Name: RE2RU_t729
+  CustomIcon: Eden_GuideInterWeapon
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6721, Name: RE2RU_t730
+  CustomIcon: Eden_GuidePentaxidRefinery
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+# FactoryPolarisRG3
+{ Token Id: 6722, Name: RE2RU_t731
+  CustomIcon: Eden_ChromiumSierra
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6723, Name: RE2RU_t732
+  CustomIcon: Eden_GuideHostileApparatus
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6724, Name: RE2RU_t733
+  CustomIcon: Eden_GuideStarport
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6725, Name: RE2RU_t734
+  CustomIcon: Eden_GuideNonLinear
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6726, Name: RE2RU_t735
+  CustomIcon: Eden_GuideFusionPowerplant
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+{ Token Id: 6727, Name: RE2RU_t736
+  CustomIcon: Eden_GuideTOPBrewery
+  # Description: "A data pad containing the communications frequency of a specific trading station or factory.\nPlace in your personal inventory then activate the frequency in the PDA under Trading."
+  Description: Eden_TradingFrequencyinfo
+  MarketPrice: 100000, display: true
+}
+
+
+
+# -------------------------------------------------------------------------- New Factory Traders for bulk trades
+
+# Eden_TokenCargo8k - Eden_TokenCargo320k
+# 6712 320k Advanced Component Shipment
+# 6713 160k Basic Component Shipment
+# 6714 64k Crop Shipment
+# 6715 160k Farming Equipment Shipment
+# 6716 64k Fertilizer Shipment
+# 6717 160k Food Shipment
+# 6718 160k Fuel Shipment
+# 6719 32k Hydrogen Shipment
+# 6720 320k Hydroponics Shipment
+# 6721 320k Industrial Shipment
+# 6722 160k Ingot Shipment
+# 6723 8k Jewelry Shipment
+# 6724 64k Leather Shipment
+# 6725 160k Liquor shipment
+# 6726 160k Livestock Feed Shipment
+# 6727 64k Meat Shipment
+# 6728 320k Mining Equipment Shipment
+# 6729 320k Optronics Shipment
+# 6730 160k Ore Shipment
+# 6731 32k Oxygen Shipment
+# 6732 320k Precious Metal Shipment
+# 6733 320k Robotics Shipment
+# 6734 32k Toxic Waste Shipment
+# 6735 16k Water Shipment
+# 6736 40k Military Shipment
+# 6737 40k Worker Shipment
+# 6738 80k Officer Shipment
+# 6739 160k VIP Shipment
+
+# Eden_TokenCargo320k
+# { Token Id: 6712, Name: [c][FFFFFF]Advanced Component Shipment[-][/c]
+  # CustomIcon: Eden_AdvancedComponentShipment
+  # Description: "A shipment of advanced components from a Traders Guild Advanced Orbital Factory in Tranquility. Sell to Polaris Orbital Robotics Factories and Optronic Orbital Factories in The Forge. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6713, Name: [c][FFFFFF]Basic Component Shipment[-][/c]
+  # CustomIcon: Eden_BasicComponentShipment
+  # Description: "A shipment of basic components from a Colonists Basic Orbital Factory in Prosperity. Sell to Traders Guild Advanced Orbital Factories in Tranquility. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo80k
+# { Token Id: 6714, Name: [c][FFFFFF]Crop Shipment[-][/c]
+  # CustomIcon: Eden_CropShipment
+  # Description: "A shipment of various crops from a Colonists Orbital Hydroponics Farm in Prosperity. Sell to Polaris Orbital Breweries in The Forge or Traders Guild Orbital Food Factories in Tranquility. [c][A9A9A9]Requires 80,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 250000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6715, Name: [c][FFFFFF]Farming Equipment Shipment[-][/c]
+  # CustomIcon: Eden_FarmingEquipmentShipment
+  # Description: "A shipment of specialized farming equipment from a Colonists Basic Orbital Factory in Prosperity. Sell to Polaris Orbital Livestock Farms in The Forge. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo80k
+# { Token Id: 6716, Name: [c][FFFFFF]Fertilizer Shipment[-][/c]
+  # CustomIcon: Eden_FertilizerShipment
+  # Description: "A shipment of specialized fertilizer from a Traders Guild Orbital Waste Facility in Tranquility. Sell to Colonists Orbital Hydroponics Farms in Prosperity. [c][A9A9A9]Requires 80,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 250000, display: true
+# }
+
+# # Eden_TokenCargo160k:6717
+# { Token Id: 6717, Name: [c][FFFFFF]Food Shipment[-][/c]
+  # CustomIcon: Eden_FoodShipment
+  # Description: "A shipment of food products from a Traders Guild Orbital Food Factory in Tranquility. Sell to Colonists Orbital Habitats in Prosperity or Polaris Orbital Habitats in The Forge. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6718, Name: [c][FFFFFF]Fuel Shipment[-][/c]
+  # CustomIcon: Eden_FuelShipment
+  # Description: "A shipment of industrial fuel from a Colonists Orbital Fuel Refinery in Prosperity or a Traders Guild Orbital Waste Facility in Tranquility. Sell to various Polaris orbital factories in The Forge. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo40k
+# { Token Id: 6719, Name: [c][FFFFFF]Hydrogen Shipment[-][/c]
+  # CustomIcon: Eden_HydrogenShipment
+  # Description: "A shipment of hydrogen gas from a Traders Guild Orbital Hydrogen Harvester around a gas giant in Tranquility. Sell to Colonists Orbital Fuel Refineries in Tranquility. [c][A9A9A9]Requires 40,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6720, Name: [c][FFFFFF]Hydroponics Shipment[-][/c]
+  # CustomIcon: Eden_HydroponicsShipment
+  # Description: "A shipment of advanced hydroponic farming equipment from a Traders Guild Advanced Orbital Factory in Tranquility. Sell to Colonists Orbital Hydroponic Farms in Prosperity. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6721, Name: [c][FFFFFF]Industrial Shipment[-][/c]
+  # CustomIcon: Eden_IndustrialShipment
+  # Description: "A shipment of industrial equipment from a Colonists Basic Orbital Factory in Prosperity. Sell to various Polaris orbital factories in The Forge. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6722, Name: [c][FFFFFF]Ingot Shipment[-][/c]
+  # CustomIcon: Eden_IngotShipment
+  # Description: "A shipment of various ingots from a Polaris Orbital Refinery in The Forge or neutral space. Sell to Coloists Basic Orbital Factories in Prosperity. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 250000, display: true # less due to being in neutral territory
+# }
+
+# # Eden_TokenCargo8k:6723
+# { Token Id: 6723, Name: [c][FFFFFF]Jewelry Shipment[-][/c]
+  # CustomIcon: Eden_JewelryShipment
+  # Description: "A sealed shipment of high value jewelry from a Traders Guild Orbital Jewelry Factory. Sell to Colonists Orbital Habitats in Prosperity. [c][A9A9A9]Requires 8,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo80k
+# { Token Id: 6724, Name: [c][FFFFFF]Leather Shipment[-][/c]
+  # CustomIcon: Eden_LeatherShipment
+  # Description: "A shipment of high quality leather from a Polaris Orbital Livestock Farm in The Forge. Sell to Traders Guild Orbital Jewelry Factories in Tranquility. [c][A9A9A9]Requires 80,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 250000, display: true
+# }
+
+# # Eden_TokenCargo160k:6725
+# { Token Id: 6725, Name: [c][FFFFFF]Liquor Shipment[-][/c]
+  # CustomIcon: Eden_LiquorShipment
+  # Description: "A shipment of various liquors from a Polaris Orbital Brewery in The Forge. Sell to Colonists Orbital Habitats in Prosperity or Traders Guild Orbital Habitats and Orbital Hotels in Tranquility. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6726, Name: [c][FFFFFF]Livestock Feed Shipment[-][/c]
+  # CustomIcon: Eden_LivestockFeedShipment
+  # Description: "A shipment of mundane livestock feed from a Colonists Orbital Hydroponics Farm in Prosperity. Sell to Polaris Orbital Livestock Farms in The Forge. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 500000, display: true
+# }
+
+# # Eden_TokenCargo80k
+# { Token Id: 6727, Name: [c][FFFFFF]Meat Shipment[-][/c]
+  # CustomIcon: Eden_MeatShipment
+  # Description: "A shipment of frozen meats from a Polaris Orbital Livestock Farm in The Forge. Sell to Traders Guild Orbital Food Factories in Tranquility. [c][A9A9A9]Requires 80,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 250000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6728, Name: [c][FFFFFF]Mining Equipment Shipment[-][/c]
+  # CustomIcon: Eden_MiningEquipmentShipment
+  # Description: "A shipment of advanced mining equipment from a Traders Guild Advanced Orbital Factory. Sell to Colonists Mining Foremen in Prosperity. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6729, Name: [c][FFFFFF]Optronics Shipment[-][/c]
+  # CustomIcon: Eden_OptronicsShipment
+  # Description: "A shipment of highly advanced optronics from a Polaris Optronics Factory in The Forge. Sell to Colonists Basic Orbital Factories in Prosperity or Traders Guild Advanced Orbital Factories in Tranquility. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo160k
+# { Token Id: 6730, Name: [c][FFFFFF]Ore Shipment[-][/c]
+  # CustomIcon: Eden_OreShipment
+  # Description: "A shipment of ores from a Colonists Mining Foreman in Prosperity. Sell to Polaris Orbital Refineries in The Forge or neutral space and Orbital Alloy Smelteries in The Forge. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true # less due to being in neutral territory
+# }
+
+# # Eden_TokenCargo40k
+# { Token Id: 6731, Name: [c][FFFFFF]Oxygen Shipment[-][/c]
+  # CustomIcon: Eden_OxygenShipment
+  # Description: "A shipment of oxygen from a Colonists Orbital Oxygen Harvester around a gas giant in Prosperity. Sell to Polaris Orbital Habitats and Orbital Livestock Farms in The Forge or to Traders Guild Orbital Habitats and Orbital Hotels in Tranquility. [c][A9A9A9]Requires 40,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6732, Name: [c][FFFFFF]Precious Metal Shipment[-][/c]
+  # CustomIcon: Eden_PreciousMetalShipment
+  # Description: "A shipment of rare metals from a Polaris Orbital Alloy Smeltery in The Forge. Sell to Colonists Basic Orbital Factories in Prosperity or Traders Guild Advanced Orbital Factories and Orbital Jewelry Factories in Tranquility. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo320k
+# { Token Id: 6733, Name: [c][FFFFFF]Robotics Shipment[-][/c]
+  # CustomIcon: Eden_RoboticsShipment
+  # Description: "A shipment of highly advanced robotics from a Polaris Orbital Robotics Factory in The Forge. Sell to Traders Guild Advanced Orbital Factories and Orbital Jewelry Factories in Tranquility. [c][A9A9A9]Requires 320,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 1000000, display: true
+# }
+
+# # Eden_TokenCargo40k
+# { Token Id: 6734, Name: [c][FFFFFF]Toxic Waste Shipment[-][/c]
+  # CustomIcon: Eden_ToxicWasteShipment
+  # Description: "A shipment of toxic waste from various Polaris orbital factories in The Forge. Sell to Colonists Orbital Fuel Refineries in Prosperity or Traders Guild Orbital Waste Facilities in Tranquility. [c][A9A9A9]Requires 40,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo20k
+# { Token Id: 6735, Name: [c][FFFFFF]Water Shipment[-][/c]
+  # CustomIcon: Eden_WaterShipment
+  # Description: "A shipment of water from a Polaris Orbital Water Harvester around a gas giant. Sell to Colonists Orbital Hydroponics Farms and Orbital Fuel Refineries in Prosperity or Traders Guild Orbital Food Factories and Orbital Hotels in Tranquility. [c][A9A9A9]Requires 20,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo40k
+# { Token Id: 6736, Name: [c][FFFFFF]Military Shipment[-][/c]
+  # CustomIcon: Eden_MilitaryShipment
+  # Description: "A shipment of military equipment. Sell to faction bounty offices in faction territory. [c][A9A9A9]Requires 40,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 100000, display: true
+# }
+
+# # Eden_TokenCargo40k:6737
+# { Token Id: 6737, Name: [c][FFFFFF]Worker Shipment[-][/c]
+  # CustomIcon: Eden_WorkerShipment
+  # Description: "A self contained transport pod with all the basic essentials and supplies to keep a small crew of workers alive in your cargo hold. Sell to various orbital factories. [c][A9A9A9]Requires 40,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 10000, display: true
+# }
+
+# # Eden_TokenCargo80k:6738
+# { Token Id: 6738, Name: [c][FFFFFF]Officer Shipment[-][/c]
+  # CustomIcon: Eden_OfficerShipment
+  # Description: "A spacious transport pod with all the basic essentials and supplies to keep a small crew of officers alive in your cargo hold. Sell to various orbital factories. [c][A9A9A9]Requires 80,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 20000, display: true
+# }
+
+# # Eden_TokenCargo160k:6739
+# { Token Id: 6739, Name: [c][FFFFFF]VIP Shipment[-][/c]
+  # CustomIcon: Eden_VIPShipment
+  # Description: "A self contained transport pod with a full suite of luxury amenities for transporting the most important VIPs. Sell to various orbital factories. [c][A9A9A9]Requires 160,000 cargo space. Use logistics toolbar to trade.[-][/c]"
+  # MarketPrice: 40000, display: true
+# }
+
+
+
+# ================================================================================================================================ Mining contracts
+
+# Added to make loot easier to handle. This allows for 1 loot group for containers to give the proper distribution of mining contracts.
+{ Token Id: 6799, Name: RE2RU_t737
+  CustomIcon: Eden_MiningContractSealed
+  Description: Eden_MiningContractSealed_Info
+  MarketPrice: 10000, display: true
+}
+
+# ----------------------------------------------------------------------------------------- Colonists 6800-6819
+# Graphite, Iron, Silicon, Copper, Ice
+
+{ Token Id: 6800, Name: RE2RU_t739
+  CustomIcon: Eden_MiningContractColGraphite
+  Description: Eden_MiningContractColGraphite_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6801, Name: RE2RU_t741
+  CustomIcon: Eden_MiningContractColIron
+  Description: Eden_MiningContractColIron_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6802, Name: RE2RU_t743
+  CustomIcon: Eden_MiningContractColSilicon
+  Description: Eden_MiningContractColSilicon_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6803, Name: RE2RU_t745
+  CustomIcon: Eden_MiningContractColCopper
+  Description: Eden_MiningContractColCopper_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6804, Name: RE2RU_t747
+  CustomIcon: Eden_MiningContractColIce
+  Description: Eden_MiningContractColIce_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6805, Name: RE2RU_t749
+  CustomIcon: Eden_MiningContractColTitanium
+  Description: Eden_MiningContractColTitanium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6806, Name: RE2RU_t751
+  CustomIcon: Eden_MiningContractColAluminium
+  Description: Eden_MiningContractColAluminium_Info
+  MarketPrice: 10000, display: true
+}
+
+
+# ----------------------------------------------------------------------------------------- Polaris 6820-6839
+# Cobalt, Titanium, Neodymium, Aluminium, Promethium, Rich Ice
+
+{ Token Id: 6820, Name: RE2RU_t753
+  CustomIcon: Eden_MiningContractPolCobalt
+  Description: Eden_MiningContractPolCobalt_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6821, Name: RE2RU_t749
+  CustomIcon: Eden_MiningContractPolTitanium
+  Description: Eden_MiningContractPolTitanium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6822, Name: RE2RU_t756
+  CustomIcon: Eden_MiningContractPolNeodymium
+  Description: Eden_MiningContractPolNeodymium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6823, Name: RE2RU_t751
+  CustomIcon: Eden_MiningContractPolAluminium
+  Description: Eden_MiningContractPolAluminium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6824, Name: RE2RU_t759
+  CustomIcon: Eden_MiningContractPolPromethium
+  Description: Eden_MiningContractPolPromethium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6825, Name: RE2RU_t761
+  CustomIcon: Eden_MiningContractPolRichIce
+  Description: Eden_MiningContractPolRichIce_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6826, Name: RE2RU_t741
+  CustomIcon: Eden_MiningContractPolIron
+  Description: Eden_MiningContractPolIron_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6827, Name: RE2RU_t745
+  CustomIcon: Eden_MiningContractPolCopper
+  Description: Eden_MiningContractPolCopper_Info
+  MarketPrice: 10000, display: true
+}
+
+
+# ----------------------------------------------------------------------------------------- Trade Federation 6840-6859
+# Platinum, Erestrum, Gold, tungsten, Pentaxid
+
+{ Token Id: 6840, Name: RE2RU_t765
+  CustomIcon: Eden_MiningContractTraPlatinum
+  Description: Eden_MiningContractTraPlatinum_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6841, Name: RE2RU_t767
+  CustomIcon: Eden_MiningContractTraErestrum
+  Description: Eden_MiningContractTraErestrum_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6842, Name: RE2RU_t769
+  CustomIcon: Eden_MiningContractTraGold
+  Description: Eden_MiningContractTraGold_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6843, Name: RE2RU_t771
+  CustomIcon: Eden_MiningContractTraTungsten
+  Description: Eden_MiningContractTraTungsten_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6844, Name: RE2RU_t773
+  CustomIcon: Eden_MiningContractTraPentaxid
+  Description: Eden_MiningContractTraPentaxid_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6845, Name: RE2RU_t775
+  CustomIcon: Eden_MiningContractTraStone
+  Description: Eden_MiningContractTraStone_Info
+  MarketPrice: 10000, display: true
+}
+
+
+
+
+# ----------------------------------------------------------------------------------------- Zirax Empire 6860-6879
+# Magnesium, Sathium, Zascosium, Palladium, Magmacite
+
+{ Token Id: 6860, Name: RE2RU_t777
+  CustomIcon: Eden_MiningContractZirMagnesium
+  Description: Eden_MiningContractZirMagnesium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6861, Name: RE2RU_t779
+  CustomIcon: Eden_MiningContractZirSathium
+  Description: Eden_MiningContractZirSathium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6862, Name: RE2RU_t781
+  CustomIcon: Eden_MiningContractZirZascosium
+  Description: Eden_MiningContractZirZascosium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6863, Name: RE2RU_t783
+  CustomIcon: Eden_MiningContractZirPalladium
+  Description: Eden_MiningContractZirPalladium_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6864, Name: RE2RU_t785
+  CustomIcon: Eden_MiningContractZirMagmacite
+  Description: Eden_MiningContractZirMagmacite_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6865, Name: RE2RU_t767
+  CustomIcon: Eden_MiningContractZirErestrum
+  Description: Eden_MiningContractZirErestrum_Info
+  MarketPrice: 10000, display: true
+}
+
+{ Token Id: 6866, Name: RE2RU_t749
+  CustomIcon: Eden_MiningContractZirTitanium
+  Description: Eden_MiningContractZirTitanium_Info
+  MarketPrice: 10000, display: true
+}
+
+
+# # Fulfilled Mining Contract Tier 1
+# { Token Id: 6801, Name: "Fulfilled Mining Contract Tier 1"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# # Fulfilled Mining Contract Tier 2
+# { Token Id: 6802, Name: "Fulfilled Mining Contract Tier 2"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# # Fulfilled Mining Contract Tier 3
+# { Token Id: 6803, Name: "Fulfilled Mining Contract Tier 3"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# # Fulfilled Mining Contract Tier 4
+# { Token Id: 6804, Name: "Fulfilled Mining Contract Tier 4"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# # Fulfilled Mining Contract Tier 1
+# { Token Id: 6805, Name: "Fulfilled Mining Contract Tier 5"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# Fulfilled Mining Contract Tier 1
+# { Token Id: 6806, Name: "Fulfilled Mining Contract Tier 6"
+  # CustomIcon: KeyCardRed
+  # Description: "Used to start a mining mission."
+  # MarketPrice: 25000, display: true
+# }
+
+# # Colonists Mining Contract: Iron
+# { Token Id: 6811, Name: "[c][FFFFFF](Colonists)[-][/c] Mining Contract: Iron"
+  # CustomIcon: Eden_GuideOreBlue1
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# # Colonists Mining Contract: Copper, Silicon
+# { Token Id: 6812, Name: "[c][FFFFFF](Colonists)[-][/c] Mining Contract: Copper, Silicon"
+  # CustomIcon: Eden_GuideOreBlue2
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# # Colonists Mining Contract: Promethium, Titanium, Magnesium
+# { Token Id: 6813, Name: "[c][FFFFFF](Colonists)[-][/c] Mining Contract: Promethium, Titanium, Magnesium"
+  # CustomIcon: Eden_GuideOreBlue3
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# # Polaris Mining Contract: Iron, Cobalt, Neodymium
+# { Token Id: 6821, Name: "[c][E59933](Polaris)[-][/c] Mining Contract: Iron, Cobalt, Neodymium"
+  # CustomIcon: Eden_GuideOreOrange1
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# # Polaris Mining Contract: Sathium, Gold, Erestrum
+# { Token Id: 6822, Name: "[c][E59933](Polaris)[-][/c] Mining Contract: Sathium, Gold, Erestrum"
+  # CustomIcon: Eden_GuideOreOrange2
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# # Polaris Mining Contract: Pentaxid, Zascosium, Aluminium
+# { Token Id: 6823, Name: "[c][E59933](Polaris)[-][/c] Mining Contract: Pentaxid, Zascosium, Aluminium"
+  # CustomIcon: Eden_GuideOreOrange3
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission."
+  # MarketPrice: 500, display: true
+# }
+
+# { Token Id: 6824, Name: "[c][E59933](Polaris)[-][/c] Mining Contract: Rich Ice"
+  # CustomIcon: Eden_GuideOreOrange3
+  # DropOnDeath: false
+  # Description: "Used to start a mining contract mission.\nPlace in your personal inventory then start the contract in the PDA under Contracts.\nKeep the contract, you will need it to complete the mission.\n\nDetails: Mine rich ice asteroids within the galactic region of Solitude. Specialized ice mining drills will be required."
+  # MarketPrice: 500, display: true
+# }
+
+# # -------------------------------------------------------------------------- Wanted by Colonists
+# # Savanth Greenzald's Insignia
+# { Token Id: 6601, Name: Eden_TokenBountyColonists1
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo1
+  # MarketPrice: 25000, display: true
+# }
+
+# # Marko Inero's Insignia
+# { Token Id: 6602, Name: Eden_TokenBountyColonists2
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo2
+  # MarketPrice: 25000, display: true
+# }
+
+# # Small Tony's Insignia
+# { Token Id: 6603, Name: Eden_TokenBountyColonists3
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo3
+  # MarketPrice: 25000, display: true
+# }
+
+# # Greeza Zeerzhi's Insignia
+# { Token Id: 6604, Name: Eden_TokenBountyColonists4
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo4
+  # MarketPrice: 50000, display: true
+# }
+
+# # The Steel Hammer's Insignia
+# { Token Id: 6605, Name: Eden_TokenBountyColonists5
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo5
+  # MarketPrice: 50000, display: true
+# }
+
+# # Captain Pang's Insignia
+# { Token Id: 6606, Name: Eden_TokenBountyColonists6
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo6
+  # MarketPrice: 75000, display: true
+# }
+
+# # Yerzhu the Smuggler's Insignia
+# { Token Id: 6607, Name: Eden_TokenBountyColonists7
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo7
+  # MarketPrice: 75000, display: true
+# }
+
+# # Yerzhu the Smuggler's Insignia
+# { Token Id: 6608, Name: Eden_TokenBountyColonists8
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo8
+  # MarketPrice: 75000, display: true
+# }
+
+# # Yerzhu the Smuggler's Insignia
+# { Token Id: 6609, Name: Eden_TokenBountyColonists9
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo9
+  # MarketPrice: 75000, display: true
+# }
+
+# # Yerzhu the Smuggler's Insignia
+# { Token Id: 6610, Name: Eden_TokenBountyColonists10
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyColonistsinfo10
+  # MarketPrice: 75000, display: true
+# }
+
+# # -------------------------------------------------------------------------- Wanted by Zirax
+# # 
+# { Token Id: 6611, Name: Eden_TokenBountyZirax1
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo1
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6612, Name: Eden_TokenBountyZirax2
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo2
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6613, Name: Eden_TokenBountyZirax3
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo3
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6614, Name: Eden_TokenBountyZirax4
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo4
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6615, Name: Eden_TokenBountyZirax5
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo5
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6616, Name: Eden_TokenBountyZirax6
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo6
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6617, Name: Eden_TokenBountyZirax7
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo7
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6618, Name: Eden_TokenBountyZirax8
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo8
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6619, Name: Eden_TokenBountyZirax9
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo9
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6620, Name: Eden_TokenBountyZirax10
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyZiraxinfo10
+  # MarketPrice: 75000, display: true
+# }
+
+# # -------------------------------------------------------------------------- Wanted by Polaris
+# # 
+# { Token Id: 6621, Name: Eden_TokenBountyPolaris1
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo1
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6622, Name: Eden_TokenBountyPolaris2
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo2
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6623, Name: Eden_TokenBountyPolaris3
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo3
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6624, Name: Eden_TokenBountyPolaris4
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo4
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6625, Name: Eden_TokenBountyPolaris5
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo5
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6626, Name: Eden_TokenBountyPolaris6
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo6
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6627, Name: Eden_TokenBountyPolaris7
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo7
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6628, Name: Eden_TokenBountyPolaris8
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo8
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6629, Name: Eden_TokenBountyPolaris9
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo9
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6630, Name: Eden_TokenBountyPolaris10
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPolarisinfo10
+  # MarketPrice: 75000, display: true
+# }
+
+# # -------------------------------------------------------------------------- Wanted by Trader
+# # 
+# { Token Id: 6631, Name: Eden_TokenBountyTrader1
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo1
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6632, Name: Eden_TokenBountyTrader2
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo2
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6633, Name: Eden_TokenBountyTrader3
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo3
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6634, Name: Eden_TokenBountyTrader4
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo4
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6635, Name: Eden_TokenBountyTrader5
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo5
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6636, Name: Eden_TokenBountyTrader6
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo6
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6637, Name: Eden_TokenBountyTrader7
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo7
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6638, Name: Eden_TokenBountyTrader8
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo8
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6639, Name: Eden_TokenBountyTrader9
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo9
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6640, Name: Eden_TokenBountyTrader10
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyTraderinfo10
+  # MarketPrice: 75000, display: true
+# }
+
+# # -------------------------------------------------------------------------- Wanted by Pirates
+# # 
+# { Token Id: 6641, Name: Eden_TokenBountyPirates1
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo1
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6642, Name: Eden_TokenBountyPirates2
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo2
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6643, Name: Eden_TokenBountyPirates3
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo3
+  # MarketPrice: 25000, display: true
+# }
+
+# # 
+# { Token Id: 6644, Name: Eden_TokenBountyPirates4
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo4
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6645, Name: Eden_TokenBountyPirates5
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo5
+  # MarketPrice: 50000, display: true
+# }
+
+# # 
+# { Token Id: 6646, Name: Eden_TokenBountyPirates6
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo6
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6647, Name: Eden_TokenBountyPirates7
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo7
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6648, Name: Eden_TokenBountyPirates8
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo8
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6649, Name: Eden_TokenBountyPirates9
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo9
+  # MarketPrice: 75000, display: true
+# }
+
+# #
+# { Token Id: 6650, Name: Eden_TokenBountyPirates10
+  # CustomIcon: KeyCardRed
+  # Description: Eden_TokenBountyPiratesinfo10
+  # MarketPrice: 75000, display: true
+# }
+
+
+# ================================================================================================================================ Flavor and Easter Egg Tokens
+# Eternal Slayer Memento
+{ Token Id: 666, Name: RE2RU_t789
+  Description: RE2RU_t790
+}
+
+
+
+# Admin Control Chip required to access admin settings
+{ Token Id: 6995, Name: RE2RU_t791
+  CustomIcon: Eden_GuideAdminGreen
+  DropOnDeath: false
+  Description: RE2RU_t792
+}
+
+
+# ================================================================================================================================ Project Eden Scenario Info Tokens
+{ Token Id: 6996, Name: RE2RU_t793
+  CustomIcon: Eden_Guide16
+  DropOnDeath: false
+  Description: RE2RU_t794
+  # Description: Eden_Supportinfo
+}
+
+{ Token Id: 6997, Name: RE2RU_t795
+  CustomIcon: Eden_Guide4
+  DropOnDeath: false
+  # Description: "[c][00ffff]>>> Empyriopedia <<<[-][/c][sup]\n\n[c][FFFF00]Tooltips:[-][/c] Tooltips provide useful information on many items and devices. Mouse over any item in your inventory, constructor, or tech tree to view important details.\n[c][FFFF00]PDA:[-][/c] Your PDA contains information on missions and an Empyriopedia section with important information.\n\nComplete the [c][00FFFF]Make Contact with Terran Forces[-][/c] mission under the Project Eden Story section to unlock additional missions and Empyriopedia entries. The Empyriopedia is filled in as you progress.\n\nAccess the PDA with [c][FFFF00]F1[-][/c].\n\n[c][FFFF00]Planets and Sectors: [-][/c]Planets and sectors in the current solar system are scanned and a basic description of each can be viewed on the local or solar system map.\n\n[c][FFFF00]Galaxy: [-][/c]Project Eden contains a large galaxy viewable on the galaxy map. Star class and faction territory change what you may find in a star system.[/sup]"
+  # Description: "[c][00ffff]   >>> Read the PDA First <<<[-][/c][sup]\nAccess the PDA with [c][ffff00]F1[-][/c].\n\n[c][00ffff]Missions:[-][/c] Missions are managed under the Solo Missions PDA tab. Start completing the Reforged Galaxy or Project Eden story missions to unlock additional missions.\n\n[c][00ffff]Empyriopedia:[-][/c] Contains a comprehensive encyclopedia of the scenario in the PDA and can answer many of your questions. Additional entries are unlocked as you progress through the scenario.\n\n[c][00ffff]Journey Book:[-][/c] Shows a log of previous mission dialog in the PDA.\n\n[c][00ffff]Tooltips:[-][/c] Tooltips provide important information on many items and devices. Mouse over any item in your inventory, constructor, or tech tree to view details.\n\n[c][00ffff]Planets and Sectors:[-][/c] Planets and sectors in the current solar system are scanned and a basic description of each can be viewed on the local or solar system map.\n\n[c][00ffff]Galaxy:[-][/c] Project Eden contains a large galaxy viewable on the galaxy map. Star class and faction territory change what you may find in a star system.\n\n[c][00ffff]Mass and Volume:[-][/c] Enabled by default. Use the logistics system to move items too big to fit in your inventory.\n\n[c][00ffff]CPU:[-][/c] Enabled by default. Add CPU Extenders to increase the max CPU of your ship or base.[/sup]"
+  Description: RE2RU_t796
+  # Description: Eden_Supportinfo
+}
+
+{ Token Id: 6998, Name: RE2RU_t797
+  CustomIcon: Eden_Guide18
+  DropOnDeath: false
+  Description: RE2RU_t798
+}
+
+{ Token Id: 6999, Name: RE2RU_t799
+  CustomIcon: Eden_Guide4
+  DropOnDeath: false
+  # Description: "[c][00ffff]>>> Empyriopedia <<<[-][/c][sup]\n\n[c][FFFF00]Tooltips:[-][/c] Tooltips provide useful information on many items and devices. Mouse over any item in your inventory, constructor, or tech tree to view important details.\n[c][FFFF00]PDA:[-][/c] Your PDA contains information on missions and an Empyriopedia section with important information.\n\nComplete the [c][00FFFF]Make Contact with Terran Forces[-][/c] mission under the Project Eden Story section to unlock additional missions and Empyriopedia entries. The Empyriopedia is filled in as you progress.\n\nAccess the PDA with [c][FFFF00]F1[-][/c].\n\n[c][FFFF00]Planets and Sectors: [-][/c]Planets and sectors in the current solar system are scanned and a basic description of each can be viewed on the local or solar system map.\n\n[c][FFFF00]Galaxy: [-][/c]Project Eden contains a large galaxy viewable on the galaxy map. Star class and faction territory change what you may find in a star system.[/sup]"
+  # Description: "[c][00ffff]   >>> Read the PDA First <<<[-][/c][sup]\nAccess the PDA with [c][ffff00]F1[-][/c].\n\n[c][00ffff]Missions:[-][/c] Missions are managed under the Solo Missions PDA tab. Start completing the Reforged Galaxy or Project Eden story missions to unlock additional missions.\n\n[c][00ffff]Empyriopedia:[-][/c] Contains a comprehensive encyclopedia of the scenario in the PDA and can answer many of your questions. Additional entries are unlocked as you progress through the scenario.\n\n[c][00ffff]Journey Book:[-][/c] Shows a log of previous mission dialog in the PDA.\n\n[c][00ffff]Tooltips:[-][/c] Tooltips provide important information on many items and devices. Mouse over any item in your inventory, constructor, or tech tree to view details.\n\n[c][00ffff]Planets and Sectors:[-][/c] Planets and sectors in the current solar system are scanned and a basic description of each can be viewed on the local or solar system map.\n\n[c][00ffff]Galaxy:[-][/c] Project Eden contains a large galaxy viewable on the galaxy map. Star class and faction territory change what you may find in a star system.\n\n[c][00ffff]Mass and Volume:[-][/c] Enabled by default. Use the logistics system to move items too big to fit in your inventory.\n\n[c][00ffff]CPU:[-][/c] Enabled by default. Add CPU Extenders to increase the max CPU of your ship or base.[/sup]"
+  Description: RE2RU_t800
+  # Description: Eden_Supportinfo
+}

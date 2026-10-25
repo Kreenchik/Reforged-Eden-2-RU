@@ -1,0 +1,77 @@
+# Playfield Characteristics
+Description: "Точка выхода из прыжка у звезды.
+
+[c][ffff00]Прыжковый разлом:[-][/c] [c][ffffff]Этот сектор нельзя заблокировать, и в него нельзя прыгнуть напрямую. Прыжок сюда возможен только из другой звездной системы или по путевой точке. Фабрика чертежей отключена.[-][/c]
+
+[c][ffffff][i]Ничего не оставляйте.[/i][-][/c]"
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0 #Starter
+UseFixed: True
+
+# Standard Star
+Radiation: [5,10]
+TemperatureDay: [-200,-100]
+# Space Ambient Music
+Music: [2473, Adrift, Anomalous, ColdSpace, EnergyMatrix, FirstHours, Magnitude, moonstone, MorningLight, Transit, Voyage]
+
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: SunOrbit
+# PlanetClass: Sun Warp Target
+PlayfieldLevelOverride: [1,2]
+
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+### Resource Asteroid
+Resources:
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.1
+      BaseField: True
+      RandomRotation: True
+# Zirax
+    # - Type: BA_Alien
+      # GroupName: R2SatelliteZirax
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 2 ]
+      # Probability: 0
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # InitPower: True
+      # Properties:
+        # - Key: RegenAfter
+          # Value: 720
+
+# Jump Exits.
+    - Type: BA_Alien
+      GroupName: RE2_JumpExit
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      InitPower: True
+      Properties:
+        - Key: MapDistance
+          Value: 0
+        - Key: HudDistance
+          Value: 0

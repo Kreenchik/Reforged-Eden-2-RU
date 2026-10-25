@@ -1,0 +1,48 @@
+# Playfield Characteristics
+Description: "Точка выхода из прыжка у звезды.
+
+[c][ffff00]Прыжковый разлом:[-][/c] [c][ffffff]Этот сектор нельзя заблокировать, и в него нельзя прыгнуть напрямую. Прыжок сюда возможен только из другой звездной системы или по путевой точке. Фабрика чертежей отключена.[-][/c]
+
+[c][ffffff][i]Ничего не оставляйте.[/i][-][/c]"
+
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0 #Starter
+UseFixed: True
+
+# Standard Star
+Radiation: [5,10]
+TemperatureDay: [-200,-100]
+# Dark Ambient Music
+Music: [alien2, AnAridPlace, barren, Blight, Cypher, DarkSoundscape, DarkSoundscape2, DarkSoundscape3, lava2]
+
+
+PlayfieldType: Space
+LandClaimZone: Device
+PlanetType: SunOrbit
+# PlanetClass: Sun Warp Target
+PlayfieldLevelOverride: [1,2]
+
+AllowBlueprintSV: False
+AllowBlueprintCV: False
+AllowBlueprintBA: False
+AllowBlueprintHV: False
+
+### Resource Asteroid
+Resources:
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0
+      Properties:
+        - Key: RegenAfter
+          Value: 720
+
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude]
+      FieldName: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude] # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]
+      Probability: 0
+      BaseField: True
+      RandomRotation: True
