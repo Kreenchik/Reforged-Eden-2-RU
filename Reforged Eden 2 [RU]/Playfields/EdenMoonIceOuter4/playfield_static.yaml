@@ -1,7 +1,7 @@
 ---
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
-Description: "Сложность: [c][ff0000]Сложно[-][/c] \n\nГлубокие ледяные разломы изрезали застывший ландшафт этой ледяной луны. В мягких слоях глубинного льда, далеко под твердым поверхностным слоем, обнаружены залежи пентаксида."
+Description: "Сложность: [c][ff0000]Сложно[-][/c] \n\nГлубокие ледяные разломы изрезали застывший ландшафт этой ледяной луны. В мягких слоях глубинного льда, далеко под твёрдым поверхностным слоем, обнаружены залежи пентаксида."
 
 PlanetType: Ice
 PlayfieldType: Moon

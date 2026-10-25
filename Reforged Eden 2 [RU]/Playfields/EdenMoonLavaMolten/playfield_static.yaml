@@ -1,7 +1,7 @@
 ---
 # Playfield Configuration
 # IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
-Description: "Сложность: [c][ffff00]Средне[-][/c] \n\nВ ландшафте преобладают трещины, горные хребты и озера раскаленной лавы."
+Description: "Сложность: [c][ffff00]Средне[-][/c] \n\nВ ландшафте преобладают трещины, горные хребты и озёра раскалённой лавы."
 
 PlanetClass: Molten Lava Moon
 PlanetType: MoonLava
