@@ -1,0 +1,35 @@
+name: Ошибка в переводе
+description: Опечатка, неточный или непереведенный текст, обрезанная строка
+title: "[Перевод] "
+labels: ["перевод"]
+body:
+  - type: textarea
+    id: where
+    attributes:
+      label: Где находится текст
+      description: КПК, название предмета, диалог, описание планеты, карта галактики, экран загрузки и т.д.
+      placeholder: "Например: КПК, глава 2, задание «...»"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Как сейчас
+      description: Текст из игры как есть. Если текст на английском - тоже вставьте его.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Как должно быть
+      description: Ваш вариант перевода, если есть.
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Скриншот
+      description: Перетащите картинку сюда.
+  - type: input
+    id: build
+    attributes:
+      label: Версия русификатора
+      placeholder: "RE2 Build 46 | Empyrion v1.19.6"

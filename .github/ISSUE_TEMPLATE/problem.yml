@@ -1,0 +1,27 @@
+name: Проблема с русификатором
+description: Сценарий не запускается, текст отображается знаками «???», что-то сломалось после установки
+title: "[Проблема] "
+labels: ["проблема"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Что случилось
+      description: Опишите проблему и что вы делали перед этим.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Как устанавливали русификатор
+      description: Какие шаги из README выполнили, куда копировали файлы.
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Скриншот или лог
+      description: Перетащите картинку или файл сюда.
+  - type: input
+    id: build
+    attributes:
+      label: Версия русификатора и игры
+      placeholder: "RE2 Build 46 | Empyrion v1.19.6"
